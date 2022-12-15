@@ -2,9 +2,6 @@
 
 This is a simple POS and Inventory system built with PHP, Bootstrap, Jquery and MySQL as Database
 
-## Demo
-
-Demo Link: [Youtube Video](https://www.youtube.com/watch?v=JNHXUDmNwag)
 
 ## Getting Started
 
@@ -39,19 +36,16 @@ Setup the database and create your login details
 * [DataTables](https://datatables.net/) - Table used
 * [Fontawesome](https://fontawesome.com/) - Icons use
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Contact
 
-Ronil Cajan - [@RonCajan](https://twitter.com/RonCajan) - cajanr02@gmail.com
-
-Project Link: [https://github.com/ronilcajan/PointOfSale](https://github.com/ronilcajan/PointOfSale)
+eshunmichael2tech1@yahoo.com
 
 
 ## Acknowledgments
 
+* Ronil Cajan - [@RonCajan](https://twitter.com/RonCajan) - cajanr02@gmail.com
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
