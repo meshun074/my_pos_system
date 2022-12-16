@@ -48,9 +48,9 @@
 						<td><?php echo $row1['product_size'];?></td>
 						<td><?php echo $row1['total_qty'];?></td>
 						<td><?php echo $row1['unit_per_price'];?></td>
-						<td>GHS<?php echo $row1['sell_price'];?></td>
+						<td>₵<?php echo $row1['sell_price'];?></td>
 						<td> <?php echo $row1['remarks'];?></td>
-						<td>GHS<?php echo $row1['Total'];?></td>
+						<td>₵<?php echo $row1['Total'];?></td>
 					</tr>
 					<?php } ?>
 					</tbody>

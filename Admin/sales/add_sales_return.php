@@ -99,7 +99,7 @@
 						<tr>
 							<td align="right">
 								<input type="submit" name="create_sales_return" value="Submit" id="create_sales_return" class="btn btn-sm btn-info mr-5"/>
-								<b>Grand Total:&nbsp<h4 id="final_total_amount">GHS 0.00</h4></b>
+								<b>Grand Total:&nbsp<h4 id="final_total_amount">₵ 0.00</h4></b>
 							</td>
 						</tr>
 					</table>

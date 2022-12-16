@@ -46,7 +46,7 @@
 						<td><?php echo $row['barcode'];?></td>
 						<td><?php echo $row['product_name'];?></td>
 						<td><?php echo $row['product_size'];?></td>
-						<td align="right">GHS&nbsp<?php echo $row['sell_price'];?></td>
+						<td align="right">₵&nbsp<?php echo $row['sell_price'];?></td>
 						<td><?php echo $row['quantity'];?></td>
 						<td><?php echo $row['unit_per_price'];?></td>
 						<td><?php echo $row['min_stocks'];?></td>

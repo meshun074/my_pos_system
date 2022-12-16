@@ -41,7 +41,7 @@
 						<th scope="col" class="column-text">Credit Note No.</th>
 						<th scope="col" class="column-text">Reciever Name</th>
 						<th scope="col" class="column-text">Customer Name</th>				
-						<th scope="col" class="column-text">Total Value(GHS)</th>
+						<th scope="col" class="column-text">Total Value ₵</th>
 						<th scope="col" class="column-text">Date</th>
 
 					</tr>

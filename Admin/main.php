@@ -30,7 +30,7 @@ if (isset($_SESSION['username'])) {
 				<nav>
 					<div class="container-fluid">
 						<div class="row border-bottom " style="background-color: #0d0d0d; color: #D9A84E;">
-							<div class="col-12 col-md-4 mt-1 "> <strong>SGBR Hardware Store</strong> </div>
+							<div class="col-12 col-md-4 mt-1 "> <strong><i class="fa-solid fa-store"></i> SGBR Hardware Store</strong> </div>
 							<div class="col-12 col-md-4">
 								<div class="nav nav-tabs justify-content-center pt-3" id="nav-tab" role="tablist">
 									<button class="nav-link active" style="color: #0d0d0d;" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])) {
 										User
 									</a>
 									<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<li><a class="dropdown-item" href="user/profile.php"><i class="fas fa-users"></i> User Profile</a></li>
+										<li><a class="dropdown-item" href="user/profile.php"><i class="fa-solid fa-id-badge"></i> User Profile</a></li>
 										<li><a class="dropdown-item" href="user/user.php"><i class="fas fa-user-friends"></i> User Management</a></li>
 										<li>
 											<hr class="dropdown-divider">
@@ -111,7 +111,7 @@ if (isset($_SESSION['username'])) {
 										<div class="col-12 mb-0 pb-0 ">
 											<div class="header_price border m-0  p-0 pb-5 ">
 												<h5 class="ps-2 pt-1">Grand Total</h5>
-												<p class=" me-2 mb-0" style="float: right; font-size: 30px;" id="totalValue">GHS 0.00</p>
+												<p class=" me-2 mb-0" style="float: right; font-size: 30px;" id="totalValue">₵ 0.00</p>
 											</div>
 										</div>
 										<div class="col-12 ">
@@ -120,7 +120,7 @@ if (isset($_SESSION['username'])) {
 													<tbody>
 
 														<tr>
-															<td valign="baseline"><small class="  pe-3 ">Customer Name:</small></td>
+															<td valign="baseline"><small class="  pe-3 ">Customer Name <i class="fa-solid fa-magnifying-glass"></i> </small></td>
 															<td valign="baseline"><small>
 																	<div class="content p-0 me-3"><input type="text" class=" ps-0 customer_search" autocomplete="off" data-provide="typeahead" id="customer_search" placeholder="Customer Search" name="customer" />
 																</small>
@@ -163,9 +163,9 @@ if (isset($_SESSION['username'])) {
 										<div class="col border border-dark mt-1 p-1">
 											<table class=" table-responsive-sm w-100 ">
 												<tbody>
-													<td>Total (GHS): <span id="totalValue1" class="mb-0 ml-5 pl-3">0.00</span>
+													<td>Total ₵: <span id="totalValue1" class="mb-0 ml-5 pl-3">0.00</span>
 													</td>
-													<td>Discount (GHS): <input class="text-right w-50 w-md-25" type="number" name="discount" value="0" min="0" placeholder="Enter Discount" id="discount"></td>
+													<td>Discount ₵: <input class="text-right w-50 w-md-25" type="number" name="discount" value="0" min="0" placeholder="Enter Discount" id="discount"></td>
 													<!-- checkbox for credit-->
 													<td>
 														<div class="form-check">
@@ -176,7 +176,7 @@ if (isset($_SESSION['username'])) {
 													</td>
 													<td>
 														<!--                dropdown for depos-->
-														<div class="input-group ">
+														<div class="input-group "><span class="pe-1"> Branch: </span> 
 															<select class="custom-select" id="depo">
 																<option selected>Achimfo</option>
 																<option value="Jhs Depo">Abokyia</option>
@@ -233,7 +233,7 @@ if (isset($_SESSION['username'])) {
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<div class="modal-body w-100 justify-content-center" id="reciept">
+						<div class="modal-body w-100 justify-content-center p-0 pe-1 ps-1" id="reciept">
 							<h6 class="text-center font-weight-bold">Sunstar Gold Buying & Refinery</h6>
 							<h6 class="text-center font-weight-bold">Hardware Store</h6>
 							<h6 class="text-center">No: 0243062545 / 0559433723</h6>
@@ -253,7 +253,7 @@ if (isset($_SESSION['username'])) {
 			<!-- offcanvas -->
 			<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
 				<div class="offcanvas-header pb-2 pt-2" style="background-color: #0d0d0d; color: #D9A84E;">
-					<h5 class="offcanvas-title  " id="offcanvasExampleLabel">SGBR Menu</h5>
+					<h5 class="offcanvas-title  " id="offcanvasExampleLabel"><i class="fa-solid fa-store"></i> SGBR Menu</h5>
 					<button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 				</div>
 				<div class="offcanvas-body p-0" style="background-color: #0d0d0d; color: #D9A84E;">

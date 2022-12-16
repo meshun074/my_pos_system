@@ -39,7 +39,7 @@
 						<th scope="col" class="column-text">Cashier</th>
 						<th scope="col" class="column-text">Customer Name</th>
 					<th scope="col" class="column-text">Discount(%)</th>
-						<th scope="col" class="column-text">Value(GHS)</th>
+						<th scope="col" class="column-text">Value ₵</th>
 							<th scope="col" class="column-text">Date</th>
 
 					</tr>

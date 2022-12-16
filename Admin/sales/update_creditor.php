@@ -50,20 +50,20 @@
 								<td class="pl-5 pb-2"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-pen-alt"></i></span></div><input type="text" name="id" class="form-control-sm form-control" value="<?php echo $row1['receipt_no'];?>"required></div></td>
 							</tr>
 							<tr>
-                                <td  valign="baseline">Owes(GHS):</td>
+                                <td  valign="baseline">Owes ₵:</td>
                                 <td class="pl-5 pb-2"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-pen-alt"></i></span></div><input type="text" name="owes" readonly class="form-control-sm form-control" value="<?php echo $row1['owes'];?>"required></div></td>
                             </tr>
 							<tr>
-                                <td  valign="baseline">Paid(GHS):</td>
+                                <td  valign="baseline">Paid ₵:</td>
                                 <td class="pl-5 pb-2"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-pen-alt"></i></span></div><input type="number" min = "0.01" step="0.01" name="paid" readonly class="form-control-sm form-control" value="<?php echo $row1['paid'];?>"required></div></td>
                             </tr>
 							<tr>
-                                <td  valign="baseline">Balance(GHS):</td>
+                                <td  valign="baseline">Balance ₵:</td>
                                 <td class="pl-5 pb-2"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-pen-alt"></i></span></div><input type="number" min = "0.01" step="0.01" style="background-color: red; color: white;" name="balance" readonly class="form-control-sm form-control" value="<?php echo $row1['balance'];?>"required></div></td>
                             </tr>
                             <tr>
-                                <td  valign="baseline">Make Payment(GHS):</td>
-                                <td class="pl-5 pb-2"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-pen-alt"></i></span></div><input type="number" min = "0.01" step="0.01" name="make_payment" class="form-control-sm form-control" placeholder="GHS 0.00" required></div></td>
+                                <td  valign="baseline">Make Payment ₵:</td>
+                                <td class="pl-5 pb-2"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-pen-alt"></i></span></div><input type="number" min = "0.01" step="0.01" name="make_payment" class="form-control-sm form-control" placeholder="₵ 0.00" required></div></td>
                             </tr>
 
 						<?php }?>

@@ -41,7 +41,7 @@
 						<th scope="col" class="column-text">Transaction No.</th>
 						<th scope="col" class="column-text">Reciever Name</th>
 						<th scope="col" class="column-text">Supplier Name</th>				
-						<th scope="col" class="column-text">Total Value(GHS)</th>
+						<th scope="col" class="column-text">Total Value ₵</th>
 						<th scope="col" class="column-text">Date</th>
 
 					</tr>

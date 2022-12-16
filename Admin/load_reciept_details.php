@@ -1,5 +1,5 @@
 <?php 
-include('../mknesell_pos/server/connection.php');
+include('server/connection.php');
 
 if(isset($_POST["load_receipt"])){  
     $output = '';
@@ -14,55 +14,56 @@ if(isset($_POST["load_receipt"])){
     $result1 = mysqli_query($db, $query1);
     $first_row = mysqli_fetch_assoc($result1);
     if ($first_row){
-        echo '<h6 class=" text-center font-weight-bold" >Sunstar Gold Buying & Refinery</h6>
-          <h6 class=" text-center font-weight-bold" >Hardware Store</h6>
-          <h6 class="text-center" >No: 0243062545 / 0559433723</h6>
-          <h6 class="text-center" >Loc: Achimfo, Abokyia, Sewum</h6><hr>';
+        echo '<h6 class="text-center font-weight-bold m-0" >Sunstar Gold Buying & Refinery</h6>
+          <h6 class=" text-center font-weight-bold m-0 mb-1" >Hardware Store</h6>
+          <h6 class="text-center m-0" >No: 0243062545 / 0559433723</h6>
+          <h6 class="text-center m-0" >Loc: Achimfo, Abokyia, Sewum</h6><hr>';
     }
     
-    echo '<table class="table table-borderless table-sm">
+    echo '<table class="table table-borderless table-sm m-0">
     <thead>
       <tr >
-      <td scope="col" >Reciept no.</td>
-      <th scope="col" >'.$myrow["sales_no"].'</th>      
+      <td class" m-0 p-0 " scope="col" >Reciept no.</td>
+      <th class" m-0 p-0 " scope="col " >'.$myrow["sales_no"].'</th>      
       </tr>
       <tr>
-      <td  scope="col">Date</td>
-      <th  colspan="2" scope="col">'.$myrow["date"].'</th>
+      <td class" m-0 p-0 " scope="col ">Date</td>
+      <th class" m-0 p-0 " colspan="2" scope="col">'.$myrow["date"].'</th>
       </tr>
       <tr>
-      <td scope="col">User</td>
-      <td scope="col">'.$myrow["username"].'</td>
+      <td class" m-0 p-0 " scope="col">User</td>
+      <td class" m-0 p-0 " scope="col">'.$myrow["username"].'</td>
       </tr>
       <tr>
-      <td scope="col">Time</td>
-      <th scope="col">'.$myrow["time"].'</th>
+      <td class" m-0 p-0 " scope="col">Time</td>
+      <th class" m-0 p-0 " scope="col">'.$myrow["time"].'</th>
       </tr>
     </thead>
     <tbody>
       <tr >
-      <td colspan="1" scope="row">Customer:</td>
-      <td colspan="3">'.$first_row["firstname"]." ".$first_row["lastname"].'</td>				
+      <td class" m-0 p-0 " colspan="1" scope="row">Customer:</td>
+      <td class" m-0 p-0 " colspan="3">'.$first_row["firstname"]." ".$first_row["lastname"].'</td>				
       </tr>
       <tr>
-      <td colspan="1" scope="row">Address</td>
-      <td colspan="3">'.$first_row["address"].'</td>				
+      <td class" m-0 p-0 " colspan="1" scope="row">Address</td>
+      <td class" m-0 p-0 " colspan="3">'.$first_row["address"].'</td>				
       </tr>
       <tr>
-      <th scope="col">Description</th>
-      <th scope="col">Price(GHS)</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Total(GHS)</th>
+      <th class" m-0 p-0 " scope="col">Description</th>
+      <th class" m-0 p-0 " scope="col">Price₵</th>
+      <th class" m-0 p-0 " scope="col">Quantity</th>
+      <th class" m-0 p-0 " scope="col">Total₵</th>
       </tr>
     </tbody>
     </table>';
     // .$first_row["firstname"]." ".$first_row["lastname"].
+    $output .= '  
+    <div class="table-responsive">  
+    <table class="table table-borderless table-sm m-0">
+    <tbody>';
     while($row = mysqli_fetch_array($result)){
 
-			$output .= '  
-	  			<div class="table-responsive">  
-          <table class="table table-borderless table-sm">
-          <tbody>';
+		
 		   	$output .= '
 			   <tr>
 					<td scope="col"><strong>'.$row["product_name"].'</strong></td>  
@@ -84,7 +85,7 @@ if(isset($_POST["load_receipt"])){
       if($_POST["owes"]== 0){
     echo '<hr>
     <div class="table-responsive">  
-          <table class="table table-borderless table-sm">
+          <table class="table table-borderless table-sm m-0 p-0">
           <tbody>
           <tr>
           <th scope="col">Total</th>
@@ -101,7 +102,7 @@ if(isset($_POST["load_receipt"])){
  }else{
   echo '<hr>
     <div class="table-responsive">  
-          <table class="table table-borderless table-sm">
+          <table class="table table-borderless table-sm m-0 p-0s">
           <tbody>
           <tr>
           <th scope="col">Total</th>
@@ -122,7 +123,7 @@ if(isset($_POST["load_receipt"])){
     </tbody>  
 		   </table>  
 	  		</div>
-        <p class="text-center" >Thank you <br>Visit Again</p>';
+        <p class="text-center m-0 p-0" >Thank you <br>Visit Again</p>';
 }  
 }
 }

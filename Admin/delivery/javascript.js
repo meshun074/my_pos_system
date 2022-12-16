@@ -115,21 +115,21 @@ $(document).ready(function(){
 	});
 	$(document).on('click','.remove_row',function(){
 		var row_id = $(this).attr("id");
-		var total_product_amount = $('#total_amount'+row_id).val().replace("GHS","");
-		var final_amount = $('#final_total_amount').text().replace("GHS","");
+		var total_product_amount = $('#total_amount'+row_id).val().replace("₵","");
+		var final_amount = $('#final_total_amount').text().replace("₵","");
 		var result_amount = parseFloat(final_amount) - parseFloat(total_product_amount);
 		if(isNaN(result_amount)){
 
 			if(total_product_amount == ""){
 				var total_product_amount = 0;
 				var minus_total = parseFloat(final_amount) - parseFloat(total_product_amount);
-				$('#total_amount').text('GHS '+minus_total);
+				$('#total_amount').text('₵ '+minus_total);
 			}else{
-				$('#final_total_amount').text('GHS 0.00');
+				$('#final_total_amount').text('₵ 0.00');
 			}
 			
 		}else{
-			$('#final_total_amount').text('GHS '+result_amount);
+			$('#final_total_amount').text('₵ '+result_amount);
 		}
 		
 		$('#row_id_'+row_id).remove();
@@ -169,7 +169,7 @@ $(document).ready(function(){
 				buy_price = $('#buy_price'+j).val().replace(",","");
 				if(buy_price > 0 ){
 					total_amount = parseFloat(quantity).toFixed(2) * parseFloat(buy_price).toFixed(2);
-					$('#total_amount'+j).val('GHS '+total_amount);
+					$('#total_amount'+j).val('₵ '+total_amount);
 					sell_price = $('#sell_price'+j).val();
 					if(sell_price>0){	
 						actual_amount = parseFloat(sell_price) * parseFloat(quantity);
@@ -179,7 +179,7 @@ $(document).ready(function(){
 			}
 			final_product_amount += total_amount;
 		}
-		$('#final_total_amount').text('GHS '+final_product_amount);
+		$('#final_total_amount').text('₵ '+final_product_amount);
 	}
 	$(document).on('blur', '.sell_price', function(){
 		final_total(count);
@@ -195,7 +195,7 @@ $(document).ready(function(){
 		var supplier = $('#supplier_search').val();
 		var transaction_no = $('#order_no').val();
 		var order_date = $('#order_date').val();
-		var total = parseFloat($('#final_total_amount').text().replace("GHS","").replace(" ","")).toFixed(2);		
+		var total = parseFloat($('#final_total_amount').text().replace("₵","").replace(" ","")).toFixed(2);		
 		$('.product_name').each(function(){
 			product_name.push($(this).val());
 		});
@@ -206,7 +206,7 @@ $(document).ready(function(){
 			buy_price.push($(this).val());
 		});
 		$('.sell_price').each(function(){
-			sell_price.push($(this).val().replace("GHS",""));
+			sell_price.push($(this).val().replace("₵",""));
 		});
 
 		if($.trim($('#supplier_search').val()).length == 0){

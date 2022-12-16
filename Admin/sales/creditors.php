@@ -35,9 +35,9 @@ $failure = "";
                     <th scope="col" class="column-text">Reciept Number</th>
                     <th scope="col" class="column-text">Customer</th>
                     <th scope="col" class="column-text">Username</th>
-                    <th scope="col" class="column-text">Owes(GHS)</th>
-                    <th scope="col" class="column-text">Paid(GHS)</th>
-                    <th scope="col" class="column-text">Balance(GHS)</th>
+                    <th scope="col" class="column-text">Owes ₵</th>
+                    <th scope="col" class="column-text">Paid ₵</th>
+                    <th scope="col" class="column-text">Balance ₵</th>
                     <th scope="col" class="column-text">Date</th>
                     <th scope="col" class="column-text">Actions</th>
                 </tr>

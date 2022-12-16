@@ -80,7 +80,7 @@ function total(){
         });
 
         $('#sales_table tbody tr td:nth-child(5)').each(function(){
-            sales += parseFloat($(this).text().replace(/,/g, "").replace("GHS",""));
+            sales += parseFloat($(this).text().replace(/,/g, "").replace("₵",""));
         });
 
         $('#sales_table tfoot #discount').text(discount);
@@ -89,5 +89,5 @@ function total(){
 }
 
 function formatNumber(num){
-    return 'GHS ' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '1,')
+    return '₵ ' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '1,')
 }

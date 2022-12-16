@@ -32,7 +32,7 @@
 						<th scope="col" class="column-text">Product Name</th>
 						<th scope="col" class="column-text">Product size</th>
 						<th scope="col" class="column-text">Quantity</th>
-						<th scope="col" class="column-text">Price(GHS)</th>											
+						<th scope="col" class="column-text">Price ₵</th>											
 						<th scope="col" class="column-text">Cashier</th>
 						<th scope="col" class="column-text">Customer Name</th>
 						<th scope="col" class="column-text">Sales Office</th>
