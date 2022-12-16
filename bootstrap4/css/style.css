@@ -4,6 +4,7 @@
 }
 html,body{
 	height: 100%;
+	width: 100%;
 }
 .main{
 	margin-top: 10%;	
@@ -95,13 +96,13 @@ ul li{
 
 .my-custom-scrollbar-a{
 	position: relative;
-	height: 350px;
+	height: 50vh;
 	overflow: auto;
 }
 
 .my-custom-scrollbar{
 	position: relative;
-	height: 300px;
+	height: 64vh;
 	overflow: auto;
 }
 

@@ -10,12 +10,12 @@
 
 
 <!-- Modal for Adding data -->
-<div class="modal fade bd-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+<div class="modal fade bd-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-bs-backdrop="static" data-keyboard="false">
 	<div class="modal-dialog modal-fluid" role="document">
 		<div class="modal-content" style="width:70%; margin-left: 20%;">
 	  		<div class="modal-header bg-secondary">
 				<h4 class="modal-title text-light" id="exampleModalCenterTitle" ><strong>Add New Customer</strong></h4>
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
 	  		</div>
 	  	<div class="modal-body">
 			<div class="container-fluid">
@@ -42,8 +42,8 @@
 			</div>
 		</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-outline-danger" data-dismiss="modal"><i class="fas fa-ban"></i> Cancel</button>
-				<button id="submit_customer" type="button"  name="submit" class="btn btn-secondary" data-dismiss="modal" form="modal-form">Submit</button>
+				<button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="fas fa-ban"></i> Cancel</button>
+				<button id="submit_customer" type="button"  name="submit" class="btn btn-secondary" data-bs-dismiss="modal" form="modal-form">Submit</button>
 			</div>
 		</div>
 	</div>
