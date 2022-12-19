@@ -91,3 +91,13 @@ ul li{
 #table1 th{
 	font-style: bold;
 }
+#product_area{
+	position: relative;
+	height: 64vh;
+	overflow: auto;
+}
+.selected-product{
+	position: relative;
+	height: 55vh;
+	overflow: auto;
+}

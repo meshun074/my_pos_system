@@ -61,7 +61,7 @@ if (isset($_SESSION['username'])) {
 											<table class="table-responsive-sm">
 												<tbody>
 													<tr>
-														<td valign="baseline"><small>User Logged on:</small></td>
+														<td valign="baseline"><small>User :</small></td>
 														<td valign="baseline"><small>
 																<p class="pt-1 pt-md-2 ms-2 ms-md-5 "><i class="fas fa-user-shield"></i> <?php echo $row['position'];
 																																		}
