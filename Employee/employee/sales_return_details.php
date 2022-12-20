@@ -2,31 +2,35 @@
 	include("../server/connection.php");
 	include '../set.php';
 	$id = $_GET['transaction_no'];
-	$sql = "SELECT sales_return.credit_note_no, products.barcode, products.product_name, products.product_size, sales_return.total_qty, products.unit_per_price, sales_return.sell_price, products.remarks, sales_return.Total FROM sales_return,products WHERE credit_note_no = '$id' AND sales_return.product_id = products.product_id";
+	$sql = "SELECT sales_return.credit_note_no, products.barcode, products.product_name, products.product_size, sales_return.total_qty, products.unit_per_price, sales_return.sell_price, products.remarks, sales_return.Total, sales_return.date FROM sales_return,products WHERE credit_note_no = '$id' AND sales_return.product_id = products.product_id";
 	$result = mysqli_query($db,$sql);
-	$row = mysqli_fetch_array($result);
+	$row = mysqli_fetch_assoc($result);
 	$result1 = mysqli_query($db,$sql); 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');?>
+	<?php include('../../templates/head1.php');?>
 </head>
 <body>
 	<div class="contain h-100">
 		<?php 
 			include('../employee/base6.php');
 		?>
-		<div class="">
+		<div >
 			<div>
-				<h1 class="ml-4 pt-2 pb-4" align="left"><i class="fas fa-truck"></i> Sales Return Records</h1>
+				<h1 class="ml-4 pt-2 ps-5" align="left"><i class="fas fa-truck"></i> Sales Return Records</h1>
 			</div>
-			<div class="table-responsive pl-5 pr-5">
-			<table class="table table-sm table-striped table-bordered" id="sales_return_table" style="margin-top: -22px;">
+
+			<div class="card text-center ps-4 pe-4 mt-2">
+				<div class="employee_background card-header text-start text-white">
+					<h5>Credit Note No:&nbsp<span style="color:goldenrod;"><?php echo $id;?></span></h5>
+				</div>
+				<div class="card-body ">
+				<div class="table-responsive ">
+			<table class="table table-sm table-striped table-bordered" id="sales_return_table" >
 				<thead>
-					<tr>
-						<td colspan="5"><h2>Credit Note No.&nbsp<span style="color: blue;"><?php echo $id;?></span></h2></td>
-					</tr>
+					
 					<tr>
 						<th scope="col" class="column-text">Barcode</th>
 						<th scope="col" class="column-text">Product Name</th>
@@ -56,12 +60,20 @@
 					</tbody>
 				</table>
 			</div>
+					
+				</div>
+				<div class="employee_background card-footer text-white">
+					Date: <?php echo $row['date'] ?>
+				</div>
+			</div>
+
+			
 		</div>
 	</div>
-	<script src="../bootstrap4/jquery/jquery.min.js"></script>
-	<script src="../bootstrap4/js/jquery.dataTables.js"></script>
-	<script src="../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
-	<script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
+	<script src="../../bootstrap4/jquery/jquery.min.js"></script>
+	<script src="../../bootstrap4/js/jquery.dataTables.js"></script>
+	<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
+	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
 	<script src="../employee/javascript.js"></script>
 </body>
 </html>

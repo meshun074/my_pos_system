@@ -18,7 +18,7 @@
 			include('../employee/base3.php');
 		?>
 		<div>
-			<h1 class="ms-4 pt-2"><i class="fas fa-money-bill-alt"></i> Cash Management</h1>
+			<h1 class="ms-4 pt-2"><i class="fas fa-money-bill-alt"></i> Sales Management</h1>
 			<hr>
 			<div class="table-responsive mt-2 p-3">
 			<table class="table table-striped" id="cashflow_table" style="margin-top: -22px;">

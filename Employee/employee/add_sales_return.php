@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');?>
+	<?php include('../../templates/head1.php');?>
 	<style type="text/css">
 		#invoice-item-table tr th{
 			font-size: 12px;
@@ -38,9 +38,11 @@
 		}
 		?>
 		<div>
-			<div class="mt-1 ml-5"><label><b>New Customer:</b></label><button class="btn-sm btn-info border" data-toggle="modal" data-target=".modal"  style="padding:5px;"><span class="badge badge-info"><i class="fas fa-user-plus"></i> New</span></button></div>
+			<h1 class="ms-4 pt-2"><i class="fa-solid fa-cash-register"></i> Recieve Sales Return</h1>
+			<hr>
+			<div class="mt-2 ms-5"><label><b>Add New Customer:</b></label><button class="ms-3 employee_background btn-sm btn-primary border border-primary" data-toggle="modal" data-target=".modal"  style="padding:5px;"><span class="badge badge-info"><i class="fas fa-user-plus"></i> New</span></button></div>
 			<form method="post" id="invoice_id">
-				<div class="table-responsive mt-1 pl-5 pr-5">
+				<div class="table-responsive mt-2 ps-4 pe-4">
 					<table class="table table-striped table-bordered table-sm">
 						<tr>
 							<td>
@@ -71,7 +73,7 @@
 										<th>Quantity</th>										
 										<th>Sell Price</th>
 										<th>Total</th>
-										<th><button type="button" name="add_row" id="add_row" class="btn btn-success btn-sm btn-xs"><i class="fas fa-plus-circle"></i> </button></th>
+										<th><button type="button" name="add_row" id="add_row" class="employee_background btn btn-primary btn-sm btn-xs"><i class="fas fa-plus-circle"></i> </button></th>
 									</tr>
 									<tr>
 										<div id="add_a_deli">
@@ -98,7 +100,7 @@
 						</tr>
 						<tr>
 							<td align="right">
-								<input type="submit" name="create_sales_return" value="Submit" id="create_sales_return" class="btn btn-sm btn-info mr-5"/>
+								<input type="submit" name="create_sales_return" value="Submit" id="create_sales_return" class="employee_background btn btn-sm btn-primary me-3"/>
 								<b>Grand Total:&nbsp<h4 id="final_total_amount">₵ 0.00</h4></b>
 							</td>
 						</tr>
@@ -108,14 +110,13 @@
 		</div>
 	</div>
 	
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="../bootstrap4/jquery/jquery.min.js"></script>
-	<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" type="text/javascript"></script>
-	<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js" type="text/javascript"></script>
-	<script src="../bootstrap4/jquery/datepicker.js"></script>
-	<script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
-	<script src="../bootstrap4/js/typeahead1.js"></script>
+
+	<script src="../../bootstrap4/jquery/jquery.min.js"></script>
+	<script src="../../bootstrap4/js/jquery.dataTables.js"></script>
+	<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
+	<script src="../../bootstrap4/jquery/datepicker.js"></script>
+	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
+	<script src="../../bootstrap4/js/typeahead1.js"></script>
 	<script src="../employee/script.js"></script>
 
 </body>
