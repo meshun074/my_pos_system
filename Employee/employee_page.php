@@ -140,7 +140,7 @@ if (isset($_SESSION['username'])) {
 								<table class="table-responsive-sm mt-2">
 									<tbody>
 										<tr>
-											<td valign="baseline"><input type="hidden" id="uname" value="<?php echo $user; ?>" /><small><strong>Customer Name:</strong> <small></td>
+											<td valign="baseline"><input type="hidden" id="uname" value="<?php echo $user; ?>" /><small><strong>Customer Name <i class="fa-solid fa-magnifying-glass"></i></strong> <small></td>
 											<td valign="baseline"><small>
 													<div class="content p-0 ms-2 me-2"><input type="text" class=" form-control-sm customer_search" autocomplete="off" data-provide="typeahead" id="customer_search" placeholder="Customer Search" name="customer" /></div>
 												</small></td>

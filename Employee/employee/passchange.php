@@ -15,12 +15,13 @@ if (isset($_POST['changepass'])){
 	if ($newpass != $confirmpass){
 		array_push($error, "The Password did not match!"); 
 	}
-	if (md5($confirmpass) == $row['password'] AND md5($confirmpass) == $row['password']){
+	
+	if (password_verify($confirmpass, $row['password'])){
 		array_push($error, "The Password is still the same!");
 	}
 
 	if (count($error) == 0){
-		$newpass = md5($confirmpass);
+		$newpass = password_hash($confirmpass,PASSWORD_DEFAULT);
 		$sql  = "UPDATE users SET password='$newpass' WHERE username = '$username'";
 		$update = mysqli_query($db ,$sql);
 		array_push($alert, "Password Successfully Changed!");

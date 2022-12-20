@@ -26,7 +26,7 @@
 				
 				<tr>
 					<td><label>Amount :</label></td>  
-					<td><strong>GHS'.$row["amount"].'</strong></td> 
+					<td><strong>₵'.$row["amount"].'</strong></td> 
 				</tr>
 				<tr>
 					<td><label>Transaction</label></td>  

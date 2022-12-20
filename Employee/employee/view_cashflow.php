@@ -9,11 +9,14 @@
 	  	$result1 = mysqli_query($db, $query1);
 		$first_row = mysqli_fetch_assoc($result1);
 		if ($first_row){
-			echo "<h1 class='d-flex'>".$id."</h1>";
-			echo "<h3 class='d-flex'>".$first_row['date']."</h3>";
-			echo "<h3 class='d-flex'>".$first_row['firstname']." ".$first_row['lastname']."</h3>";
-			echo "<h5 class='d-flex'>".$first_row['sales_office']."</h5>";
-			echo "<h5 class='d-flex'>".$first_row['status']."</h5>";
+			echo " <div class='card'>
+			<div class='card-header'>
+			Sales No: ".$id."
+			</div>
+			<div class='card-body'>
+			  <h5 class='card-title'> Customer: ".$first_row['firstname']." ".$first_row['lastname']." <br>
+			  Sale Point: ".$first_row['sales_office']." <br>
+			  Status&nbsp &nbsp &nbsp   :    ".$first_row['status']."</h5>";
 		}
 		
 
@@ -21,30 +24,28 @@
 
 			$output .= '  
 	  			<div class="table-responsive">  
-		   		<table class="w-75">';
+		   		<table class="w-100"> 
+				<tbody>';
 		   	$output .= '
 			   <tr>  
-					<th width="50%"><label>Product :</label></th>  
-					<th width="50%"><strong>'.$row["product_name"].'</strong></th>  
+					<th width="25%"><label>Product </label></th>
+					<th width="25%"><label>Price </label></th>
+					<th width="25%"><label>Stocks </label></th>
+					<th width="25%"><label>Total </label></th>    
 				</tr>
-				<tr>  
-					 <td width="50%"><label>Price :</label></td>  
-					 <td width="50%"><strong>GHS '.$row["price"].'</strong></td>  
-				</tr>
-				<tr>
-					<td width="50%"><label>Stocks :</label></td>  
-					<td width="50%"><strong>'.$row["product_quantity"].'</strong></td> 
-				</tr>
-				<tr>  
-					 <td width="50%"><label>Total :</label></td>  
-					 <td width="50%"><strong>GHS '.($row["product_quantity"]*$row["price"]).'</strong></td>  
+				<tr> 
+					<td width="25%"><strong>'.$row["product_name"].'</strong></td>  
+					<td width="25%"><strong>₵ '.$row["price"].'</strong></td>
+					<td width="25%"><strong>'.$row["product_quantity"].'</strong></td>					
+					<td width="25%"><strong>₵ '.$row["product_quantity"]*$row["price"].' </td>
 				</tr>';  
 	  }  
-	  $output .= '  
+	  $output .= " 
+	  </tbody> 
 		   </table>  
-	  		</div>  
-	  ';
+	  		</div> 
+			  </div>
+			</div> 
+	  ";
 	  echo $output;  
- 	}  
-?>
- 
+ 	}

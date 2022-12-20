@@ -14,7 +14,7 @@ $success = isset($_GET['success']);
 <!DOCTYPE html>
 <html>
 <head>
-    <?php include('../templates/head1.php');?>
+    <?php include('../../templates/head1.php');?>
 </head>
 <body>
 <div class="contain h-100">

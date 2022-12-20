@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');
+	<?php include('../../templates/head1.php');
     include('../print.php');
     ?>
 </head>
@@ -35,7 +35,7 @@
 				<thead>
 					<tr>
 						<th scope="col" class="column-text"><h3>Revenue</h3></th>						
-						<th scope="col" class="column-text"><h3 class="text-right">GHS Amount</h3></th>						
+						<th scope="col" class="column-text"><h3 class="text-right">₵ Amount</h3></th>						
 					</tr>
 				</thead>
                 <tbody>

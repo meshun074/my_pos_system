@@ -9,6 +9,6 @@
 	<button class="employee_background text-white" id="sidebar_button" onclick="window.location.href='../employee/profile.php'"><i class="fas fa-user-circle"></i> Profile</button>
 	<button class="employee_background text-white" id="sidebar_button" type="button" data-toggle="popover" title="User Management" data-content="Here you can update your profile." data-placement="bottom"><i class="fas fa-question"></i> Help</button>
 	<div class="fixed-bottom">
-		<button class="btn m-2 p-2 text-white" id="sidebar_button" onclick="window.location.href='../employee_page.php'"><i class="fas fa-arrow-alt-circle-left"></i> Back</button>
+		<button class="btn m-2 p-2 text-white" id="sidebar_button" onclick="window.location.href='../employee/profile.php'"><i class="fas fa-arrow-alt-circle-left"></i> Back</button>
 	</div>
 </div>

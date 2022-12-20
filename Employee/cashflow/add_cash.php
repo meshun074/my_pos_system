@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');?>
+	<?php include('../../templates/head1.php');?>
 </head>
 <body>
 	<div class="contain h-100">
@@ -42,7 +42,7 @@
 							</tr>
 							<tr>
 								<td  valign="baseline">Amount:</td>
-								<td class="pl-5 pb-2"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">GHS</span></div><input type="number" name="amount" class="form-control" placeholder="Enter amount" required></div></td>
+								<td class="pl-5 pb-2"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">₵</span></div><input type="number" name="amount" class="form-control" placeholder="Enter amount" required></div></td>
 							</tr>
 						</tbody>
 					</table>

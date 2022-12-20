@@ -20,7 +20,8 @@
   </li>
 </ul>
 <div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi praesentium vel esse commodi dicta aspernatur harum atque itaque, doloribus deserunt, vitae ducimus hic illum, error quae laboriosam numquam autem inventore.</div>
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><?php echo password_hash('Adwibikete1',PASSWORD_DEFAULT)?><br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi praesentium vel esse commodi dicta aspernatur harum atque itaque, doloribus deserunt, vitae ducimus hic illum, error quae laboriosam numquam autem inventore.</div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">1 Lorem ipsum dolor sit amet consectetur adipisicing elit. In hic est, illo dolores, quia ex molestiae sed voluptatibus placeat minima nesciunt temporibus accusantium quaerat eaque velit natus blanditiis atque qui.</div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, magni pariatur recusandae adipisci delectus debitis amet sit veniam, corrupti, voluptatum corporis consequuntur neque totam officia tenetur ad. Pariatur, minima blanditiis!</div>
 </div>
@@ -42,6 +43,7 @@
   </div>
   <div class="offcanvas-body">
     <div>
+      
       Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
     </div>
     <div class="dropdown mt-3">

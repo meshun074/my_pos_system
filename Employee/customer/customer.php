@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');
+	<?php include('../../templates/head1.php');
     include('../print.php');
     ?>
 </head>

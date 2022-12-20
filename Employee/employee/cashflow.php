@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');?>
+	<?php include('../../templates/head1.php');?>
 </head>
 <body>
 	<div class="contain h-100">
@@ -18,9 +18,9 @@
 			include('../employee/base3.php');
 		?>
 		<div>
-			<h1 class="ml-4 pt-2"><i class="fas fa-money-bill-alt"></i> Cash Management</h1>
+			<h1 class="ms-4 pt-2"><i class="fas fa-money-bill-alt"></i> Cash Management</h1>
 			<hr>
-			<div class="table-responsive mt-4 pl-5 pr-5">
+			<div class="table-responsive mt-2 p-3">
 			<table class="table table-striped" id="cashflow_table" style="margin-top: -22px;">
 				<thead>
 					<tr>
@@ -37,10 +37,10 @@
 					<tr class="table-active">
 						<td><?php echo $row['transaction_id'];?></td>
 						<td><?php echo $row['description'];?></td>
-						<td>GHS&nbsp<?php echo number_format($row['amount']);?></td>
+						<td>₵&nbsp<?php echo number_format($row['amount']);?></td>
 						<td><?php echo date('d M Y, g:i A', strtotime($row['transaction_date']));?></td>
 						<td>
-							<button type="button" name="view" style='font-size:10px; border-radius:5px;padding:4px;' id="<?php echo $row['transaction_id'];?>" class="btn btn-success btn-sm view_data"><i class="fas fa-eye fa-lg"></i></button>
+							<button type="button" name="view" style='font-size:10px; border-radius:5px;padding:4px; background-color: #1b1464;' id="<?php echo $row['transaction_id'];?>" class="btn btn-default btn-sm view_data text-white"><i class="fas fa-eye fa-lg"></i></button>
 						</td>
 					</tr>
 					<?php } ?>
@@ -48,10 +48,10 @@
 			</div>
 		</div>
 	</div>
-	<script src="../bootstrap4/jquery/jquery.min.js"></script>
-	<script src="../bootstrap4/js/jquery.dataTables.js"></script>
-	<script src="../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
-	<script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
+	<script src="../../bootstrap4/jquery/jquery.min.js"></script>
+	<script src="../../bootstrap4/js/jquery.dataTables.js"></script>
+	<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
+	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#cashflow_table').dataTable();
@@ -59,12 +59,12 @@
 	</script>
 </body>
 </html>
-<div id="dataModal" class="modal fade bd-example-modal-md" data-backdrop="static" data-keyboard="false">  
+<div id="dataModal" class="modal fade bd-example-modal-md" data-bs-backdrop="static" data-bs-keyboard="false">  
 	<div class="modal-dialog modal-md"  role="document">  
 		<div class="modal-content">   
 		<div class="modal-body d-inline" id="Contact_Details"></div> 
 			<div class="modal-footer"> 
-				<input type="button" class="btn btn-default btn-success" data-dismiss="modal" value="Okay">   
+				<input type="button" class="btn btn-default" style="background-color: #1b1464; color:aliceblue" data-bs-dismiss="modal" value="Okay">   
 			</div>  
 	   </div>  
 	</div>  

@@ -50,9 +50,9 @@ if(isset($_POST["load_receipt"])){
       </tr>
       <tr>
       <th scope="col">Description</th>
-      <th scope="col">Price(GHS)</th>
+      <th scope="col">Price₵</th>
       <th scope="col">Quantity</th>
-      <th scope="col">Total(GHS)</th>
+      <th scope="col">Total₵</th>
       </tr>
     </tbody>
     </table>';

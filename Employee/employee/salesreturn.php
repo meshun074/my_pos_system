@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');
+	<?php include('../../templates/head1.php');
     include('../print.php');
 	?>
 
@@ -41,7 +41,7 @@
 						<th scope="col" class="column-text">Credit Note No.</th>
 						<th scope="col" class="column-text">Reciever Name</th>
 						<th scope="col" class="column-text">Customer Name</th>				
-						<th scope="col" class="column-text">Total Value(GHS)</th>
+						<th scope="col" class="column-text">Total Value₵</th>
 						<th scope="col" class="column-text">Date</th>
 
 					</tr>
@@ -56,12 +56,12 @@
             </div>
 		</div>
 	</div>
-	<script src="../bootstrap4/jquery/jquery.min.js"></script>
-	<script src="../bootstrap4/jquery/datepicker.js"></script>
-	<script src="../bootstrap4/js/jquery.dataTables.js"></script>
-	<script src="../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
-	<script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
-	<script src="../bootstrap4/js/typeahead1.js"></script>
+	<script src="../../bootstrap4/jquery/jquery.min.js"></script>
+	<script src="../../bootstrap4/jquery/datepicker.js"></script>
+	<script src="../../bootstrap4/js/jquery.dataTables.js"></script>
+	<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
+	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
+	<script src="../../bootstrap4/js/typeahead1.js"></script>
 	<script src="../employee/script.js"></script>
 </body>
 </html>

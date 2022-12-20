@@ -56,7 +56,7 @@
                             </tr>
                             <tr>
                                 <td  valign="baseline">Make Payment:</td>
-                                <td class="pl-5 pb-2"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-pen-alt"></i></span></div><input type="number" min = "0.01" step="0.01" name="make_payment" class="form-control-sm form-control" placeholder="GHS 0.00" required></div></td>
+                                <td class="pl-5 pb-2"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-pen-alt"></i></span></div><input type="number" min = "0.01" step="0.01" name="make_payment" class="form-control-sm form-control" placeholder="₵ 0.00" required></div></td>
                             </tr>
 
 						<?php }?>

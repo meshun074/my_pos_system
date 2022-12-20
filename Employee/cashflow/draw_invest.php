@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');
+	<?php include('../../templates/head1.php');
     include('../print.php');
     ?>
 </head>
@@ -40,7 +40,7 @@
 						<td><?php echo $row['username'];?></td>
 						<td><?php echo $row['transaction_type'];?></td>
 						<td><?php echo $row['purpose'];?></td>
-						<td>GHS&nbsp<?php echo number_format($row['amount']);?></td>
+						<td>₵&nbsp<?php echo number_format($row['amount']);?></td>
 						<td><?php echo date('d M Y, g:i A', strtotime($row['transaction_date']));?></td>
 						<td>
 							<button type="button" name="view" style='font-size:10px; border-radius:5px;padding:4px;' id="<?php echo $row['transaction_id'];?>" class="btn btn-success btn-sm view_data"/><i class="fas fa-eye fa-lg"></i></button>

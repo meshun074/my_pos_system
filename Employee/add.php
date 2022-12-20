@@ -34,7 +34,7 @@
 		  				<input class="form-control form-control-sm" type="text" name="number" id="number1" placeholder="Enter Phone number" required></div>
 		  				<div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span></div>
 		  				<textarea type="text" class="form-control form-control-sm" name="address" id="address1" placeholder="Enter Address" required></textarea></div>
-		  				<label>Choose Picture:<i class="fas fa-file-upload"></i></label><input type="file" class="form-control-sm" name="image" id="image1" required/>
+		  				<label>Choose Picture:<i class="fas fa-file-upload"></i></label><br><input type="file" class="form-control-sm w-100" name="image" id="image1" required/>
 		  				</small>
 
 		  			</div>

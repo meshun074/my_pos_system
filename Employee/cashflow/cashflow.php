@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');
+	<?php include('../../templates/head1.php');
     include('../print.php');
     ?>
 </head>
@@ -39,7 +39,7 @@
 					<tr class="table-active">
 						<td><?php echo $row['transaction_id'];?></td>
 						<td><?php echo $row['description'];?></td>						 
-						<td>GHS&nbsp<?php echo number_format($row['amount']);?></td>
+						<td>₵&nbsp<?php echo number_format($row['amount']);?></td>
 						<td><?php echo $row['transaction_type'];?></td>
 						<td><?php echo date('d M Y, g:i A', strtotime($row['transaction_date']));?></td>
 						<td>

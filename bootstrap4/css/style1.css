@@ -53,6 +53,10 @@ button {
 	cursor:pointer;
 }
  #sidebar_button:hover{
-	background-color: #06521E;
+	background-color: #0f0b3f;
 	color:white;
+}
+
+.employee_background{
+	background-color: #1b1464; 
 }
