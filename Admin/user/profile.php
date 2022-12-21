@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');?>
+	<?php include('../../templates/head1.php');?>
 </head>
 <body>
 	<div class="contain h-100">
@@ -52,8 +52,8 @@
 			</div>
 		</div> 
 	</div>
-	<script src="../bootstrap4/jquery/jquery.min.js"></script>
-	<script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
+	<script src="../../bootstrap4/jquery/jquery.min.js"></script>
+	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
 	<script>
 		$(function () {
   			$('[data-toggle="popover"]').popover()

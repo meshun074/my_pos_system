@@ -8,7 +8,7 @@
 	<button id="sidebar_button" onclick="window.location.href='../sales/creditors.php'"><i class="fas fa-cart-arrow-down"></i> Creditors</button>
 	<button id="sidebar_button" onclick="window.location.href='../sales/charts2.php'"><i class="fas fa-anchor"></i> Sales Chart</button>
 	<button id="sidebar_button" type="button" data-toggle="popover" title="Sales Record" data-content="Here you can view sales record of the store." data-placement="bottom"><i class="fas fa-question"></i> Help</button>
-	<div class="fixed-bottom">
+	<div class="fixed-bottom w-25">
 		<button class="btn m-2 p-2" id="sidebar_button" onclick="window.location.href='../sales/sales.php'"><i class="fas fa-arrow-alt-circle-left"></i> Back</button>
 	</div>
 </div>

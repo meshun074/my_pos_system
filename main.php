@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./bootstrap4/css/bootstrap.min.css">
     <title>Document</title>
 </head>
-<body class="bg-primary">
+<body class="bg-light">
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
@@ -24,6 +24,19 @@
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi praesentium vel esse commodi dicta aspernatur harum atque itaque, doloribus deserunt, vitae ducimus hic illum, error quae laboriosam numquam autem inventore.</div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">1 Lorem ipsum dolor sit amet consectetur adipisicing elit. In hic est, illo dolores, quia ex molestiae sed voluptatibus placeat minima nesciunt temporibus accusantium quaerat eaque velit natus blanditiis atque qui.</div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, magni pariatur recusandae adipisci delectus debitis amet sit veniam, corrupti, voluptatum corporis consequuntur neque totam officia tenetur ad. Pariatur, minima blanditiis!</div>
+  <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+  Popover on top
+</button>
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+  Popover on right
+</button>
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+  Popover on bottom
+</button>
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
+  Popover on left
+</button>
+
 </div>
 <script src="../bootstrap4/js/bootstrap.bundle.js"></script>
 </body>
@@ -67,3 +80,5 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
+
+ 

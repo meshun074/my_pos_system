@@ -56,7 +56,15 @@ button {
 	background-color: #0f0b3f;
 	color:white;
 }
+#admin_sidebar_button:hover{
+	background-color: #000B0D;
+	color:#D9A84E ;
+}
 
 .employee_background{
 	background-color: #1b1464; 
+}
+.admin_background{
+	background-color: #0d0d0d;
+	color:#D9A84E 
 }

@@ -13,20 +13,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');?>
+	<?php include('../../templates/head1.php');?>
 </head>
 <body>
 	<div class="contain h-100">
 		<?php include('../products/base.php');?>
         <?php include('../products/print.php');?>
 		<div id="print">
-			<h1 class="ml-4 pt-2"><i class="fas fa-box-open"></i> Product Summary</h1>
+			<h1 class="ms-5 pt-2"><i class="fa-solid fa-clipboard"></i> Product Summary</h1>
 			<hr>
 			<?php include('../alert.php');?>
-			<div class="table-responsive mt-4 pl-5 pr-5" id="p">
-			<table class="table table-striped table-bordered" id="product_table" style="margin-top: -22px;">
+			<div class="table-responsive mt-4 ps-4 pe-4" id="p">
+			<table class=" table table-striped table-bordered border-warning" id="product_table">
 				<thead>
-					<tr>
+					<tr class="admin_background ">
 						<th scope="col" class="column-text">Barcode</th>
 						<th scope="col" class="column-text">Product Name</th>
 						<th scope="col" class="column-text">Minimum Stocks</th>
@@ -50,15 +50,16 @@
 			</table>
 			</div>
             <div align="right" class="container p-5">
-                <button  class="btn btn-info" onclick="printSection('p')">Print Products</button>
+                <button  class="admin_background btn btn-warning" onclick="printSection('p')">Print Products</button>
             </div>
 		</div>
 	</div>
+	
 
-	<script src="../bootstrap4/jquery/jquery.min.js"></script>
-	<script src="../bootstrap4/js/jquery.dataTables.js"></script>
-	<script src="../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
-	<script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
+	<script src="../../bootstrap4/jquery/jquery.min.js"></script>
+	<script src="../../bootstrap4/js/jquery.dataTables.js"></script>
+	<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
+	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
 	<?php include('../products/delete_products.php');?>
 </body>
 </html>
