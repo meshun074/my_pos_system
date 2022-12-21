@@ -7,7 +7,7 @@
 	<button><h3><i class="fas fa-tachometer-alt"></i> Dashboard</h3></button>
 	<button id="admin_sidebar_button" onclick="window.location.href='../delivery/delivery.php'"><i class="fa-solid fa-book"></i> Delivery Records</button>
 	<button id="admin_sidebar_button" onclick="window.location.href='../delivery/add_delivery.php'"><i class="fa-regular fa-square-plus"></i> Add Deliveries</button>
-	<button id="admin_sidebar_button" data-toggle="popover" title="Product Deliveries" data-content="After the textbox is filled, Please click the Buy Price Textbox and Tax Rate(%) Textbox to get the Sell Price Value. " data-placement="bottom"><i class="fas fa-question"></i> Help</button>
+	<button id="admin_sidebar_button" data-bs-toggle="popover" title="Product Deliveries" data-bs-content="After the textbox is filled, Please click the Buy Price Textbox and Tax Rate(%) Textbox to get the Sell Price Value. " data-bs-placement="bottom"><i class="fas fa-question"></i> Help</button>
 	<div class="fixed-bottom w-25">
 		<button class="btn m-2 p-2" id="admin_sidebar_button" onclick="window.location.href='../products/products.php'"><i class="fas fa-arrow-alt-circle-left"></i> Back</button>
 	</div>

@@ -31,7 +31,7 @@ if (isset($_GET['id'])) {
 				</button>
 				<button id="admin_sidebar_button" onclick="window.location.href='../products/products.php'"><i class="fas fa-list-ul"></i> Product List</button>
 				<button id="admin_sidebar_button" onclick="window.location.href='../delivery/add_delivery.php'"><i class="fas fa-truck"></i> Delivery</button>
-				<button id="admin_sidebar_button" type="button" data-toggle="popover" title="Product Management" data-content="Here you will create, update, delete and view products." data-placement="bottom"><i class="fas fa-question"></i> Help</button>
+				<button id="admin_sidebar_button" type="button" data-bs-toggle="popover" title="Product Management" data-bs-content="Here you will create, update, delete and view products." data-bs-placement="bottom"><i class="fas fa-question"></i> Help</button>
 				<div class="fixed-bottom w-25">
 					<button class="btn m-2 p-2" id="admin_sidebar_button" onclick="window.location.href='../main.php'"><i class="fas fa-arrow-alt-circle-left"></i> Back</button>
 				</div>
@@ -180,9 +180,11 @@ if (isset($_GET['id'])) {
 		<script src="../../bootstrap4/jquery/jquery.min.js"></script>
 		<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
 		<script>
-			$(function() {
-				$('[data-toggle="popover"]').popover()
+			var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+			var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+				return new bootstrap.Popover(popoverTriggerEl)
 			})
+
 			$(document).ready(function() {
 				$(document).on('blur', '#profit', function() {
 					sell_price();
@@ -204,7 +206,6 @@ if (isset($_GET['id'])) {
 
 
 			});
-			
 		</script>
 	</body>
 

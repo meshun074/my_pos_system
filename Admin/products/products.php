@@ -75,6 +75,12 @@ $failure = "";
 	<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
 	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
 	<?php include('../products/delete_products.php'); ?>
+	<script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+  </script>
 </body>
 
 </html>

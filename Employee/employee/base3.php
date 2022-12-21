@@ -7,7 +7,7 @@
 	<button class="employee_background text-white" id="sidebar_button" onclick="window.location.href='../employee/cashflow.php'" ><i class="fas fa-money-bill-alt"></i> Sales</button>
 	<button class="employee_background text-white" id="sidebar_button" onclick="window.location.href='../employee/salesreturn.php'"><i class="fa-regular fa-share-from-square"></i> Sales Return</button>
 	<button class="employee_background text-white" id="sidebar_button" onclick="window.location.href='../employee/creditors.php'" ><i class="fa-solid fa-money-check-dollar"></i> Creditors</button>
-	<button class="employee_background text-white" id="sidebar_button" type="button" data-toggle="popover" title="Cash Management" data-content="Here you can view sales and creditors of the store." data-placement="bottom"><i class="fas fa-question"></i> Help</button>
+	<button class="employee_background text-white" id="sidebar_button" type="button" data-bs-toggle="popover" title="Cash Management" data-bs-content="Here you can view sales and creditors of the store." data-bs-placement="bottom"><i class="fas fa-question"></i> Help</button>
 	<div class="fixed-bottom">
 		<button class="btn m-2 p-2 text-white" id="sidebar_button" onclick="window.location.href='../employee_page.php'"><i class="fas fa-arrow-alt-circle-left"></i> Back</button>
 	</div>

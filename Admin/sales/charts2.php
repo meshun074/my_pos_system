@@ -142,6 +142,12 @@ foreach($result3 as $data)
 <script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
 <script src="../sales/javascript.js"></script>
 <script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+	</script>
+<script>
   // === include 'setup' then 'config' above ===
   $(document).ready(function(){
     drawgraph(<?php echo json_encode($month2) ?>, <?php echo json_encode($amount2) ?>);

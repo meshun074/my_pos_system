@@ -57,6 +57,12 @@
 			$('#cashflow_table').dataTable();
 		})
 	</script>
+	<script>
+	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+	return new bootstrap.Popover(popoverTriggerEl)
+	})
+	</script>
 </body>
 </html>
 <div id="dataModal" class="modal fade bd-example-modal-md" data-bs-backdrop="static" data-bs-keyboard="false">  

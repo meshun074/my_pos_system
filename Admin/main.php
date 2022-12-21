@@ -72,7 +72,7 @@ if (isset($_SESSION['username'])) {
 													<tr>
 														<td valign="baseline"><small class="pb-1">Date:</small></td>
 														<td valign="baseline"><small>
-																<p class="p-0 mb-1 mb-md-2 ms-2 ms-md-5"><i class="fas fa-calendar-alt">&nbsp</i><span id='time'></span></p>
+																<p class="p-0 mb-1 mb-md-2 ms-2 ms-md-5"><i class="fas fa-calendar-alt"></i>&nbsp<span id='time'></span></p>
 															</small></td>
 													</tr>
 

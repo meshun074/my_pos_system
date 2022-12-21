@@ -13,9 +13,6 @@ if(isset($_POST["add_row"]))
         $suppliers[$row['product_id']] = $row["product_name"]. " - ". $row["product_size"]. " - ".$row["unit_per_price"]. " per price ";
     }
     
-    // $myObj->name = "John";
-    // $myObj->age = 30;
-    // $myObj->city = "New York";
 
     $myJSON = json_encode($suppliers);
 
