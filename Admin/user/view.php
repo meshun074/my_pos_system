@@ -6,31 +6,39 @@
 	  	$result = mysqli_query($db, $query);  
 
 	  	while($row = mysqli_fetch_array($result)){
-			echo "<div class='d-inline-flex  mt-2'>";
-			echo "<img width='140' height='140' style='border:1px; border-radius:2px' src='../images/".$row['image']."'>";
-			echo "</div>";
+			echo " <div class='card mb-3' style='max-width: 540px;'>
+			<div class='row g-0'>
+			  <div class='col-md-4'>
+				<img src='../../images/".$row['image']."' style='height: 12rem; width:auto' class='img-fluid rounded-start' alt='...'>
+			</div>
+			<div class='col-md-8'>
+			<div class='card-body'>";
 			$output .= '  
 	  			<div class="table-responsive">  
-		   		<table class="w-75">';   
+		   		<table class=" table table-borderless w-100">';   
 		   	$output .= '
 		   		<tr>  
-					 <td width="50%"><label>Name :</label></td>  
-					 <td width="50%"><strong>'.$row["firstname"].'&nbsp'.$row['lastname'].'</strong></td>  
+					 <td ><label>Name :</label></td>  
+					 <td ><strong>'.$row["firstname"].'&nbsp'.$row['lastname'].'</strong></td>  
 				</tr>
 				<tr>  
-					 <td width="50%"><label>Phone Number :</label></td>  
-					 <td width="50%"><strong>'.$row["contact_number"].'</strong></td>  
+					 <td ><label>Phone Number :</label></td>  
+					 <td ><strong>'.$row["contact_number"].'</strong></td>  
 				</tr>
 				<tr>
-					<td width="50%"><label>Position :</label></td>  
-					<td width="50%"><strong>'.$row["position"].'</strong></td> 
+					<td ><label>Position :</label></td>  
+					<td ><strong>'.$row["position"].'</strong></td> 
 				</tr>';  
 	  }  
 	  $output .= '  
 		   </table>  
-	  		</div>  
+	  		</div>
+			  </div>
+			  </div>
+			</div>
+		  </div> 
 	  ';
 	  echo $output;  
  	}  
 ?>
- 
+

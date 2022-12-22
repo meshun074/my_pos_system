@@ -2,10 +2,10 @@
 	include("../server/connection.php");
 	include('../user/add.php');
 	include '../set.php';
-	$sql = "SELECT * FROM users WHERE deleted='FALSE' ORDER BY firstname ASC ";
+	$sql = "SELECT * FROM users WHERE deleted='TRUE' ORDER BY firstname ASC ";
 	$result	= mysqli_query($db, $sql);
-	$deleted = isset($_GET['deleted']);
 	$restore = isset($_GET['restore']);
+	$deleted = isset($_GET['deleted']);
 	$added  = isset($_GET['added']);
 	$updated = isset($_GET['updated']);
 	$undelete = isset($_GET['undelete']);
@@ -23,7 +23,7 @@
 	<div class="contain h-100">
 		<?php include('../user/base.php');?>
 		<div>
-			<h1 class="ms-5 pt-2"><i class="fas fa-users"></i> User Management</h1>
+			<h1 class="ms-5 pt-2"><i class="fa-solid fa-user-slash"></i> Deleted Users</h1>
 			<hr>
 				<?php include('../alert.php');?>
 			<div class="table-responsive mt-4 ps-4 pe-4">
@@ -47,9 +47,8 @@
 						<td><?php echo $row['position'];?></td>
 						<td><?php echo $row['contact_number'];?></td>
 						<td>
-							<a name="edit" title="Edit" style='font-size:10px; border-radius:5px;padding:4px;' href="update_user.php?id=<?php echo $row['id'];?>" class="btn btn-info"><i class="fas fa-user-edit"></i></a>
-							<button type="button" name="view" style='font-size:10px; border-radius:5px;padding:4px;' id="<?php echo $row['id'];?>" class="btn btn-success btn-xs view_data"><i class="fas fa-eye"></i></button>
-							<button type="button" name="delete" title="Delete" style='font-size:10px; border-radius:5px;padding:4px;' data-id="<?php echo $row['id'];?>" class="delete btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" title="Delete"><i class="fas fa-trash"></i></button>
+							<button type="button" name="view" style='font-size:10px; border-radius:5px;padding:4px;' id="<?php echo $row['id'];?>" class="btn btn-success btn-xs view_data" title="View"><i class="fas fa-eye"></i></button>
+							<button type="button" name="delete" title="Delete" style='font-size:10px; border-radius:5px;padding:4px;' data-id="<?php echo $row['id'];?>" class="restore btn btn-primary" data-bs-toggle="modal" data-bs-target="#restoreModal" title="Restore"><i class="fa-solid fa-recycle"></i></button>
 						</td>
 					</tr>
 					<?php } ?>
@@ -63,7 +62,7 @@
 	<script src="../../bootstrap4/js/jquery.dataTables.js"></script>
 	<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
 	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
-	<?php include('../user/delete_user.php');?>
+	<?php include('../user/restore_user.php');?>
 	<script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
@@ -87,12 +86,12 @@
   	$('[data-toggle="popover"]').popover()
 	});
 	$(function(){
-		$('button.delete').click(function(e){
+		$('button.restore').click(function(e){
 			e.preventDefault();
 			var link = this;
-			var deleteModal = $("#deleteModal");
-			deleteModal.find('input[name=id]').val(link.dataset.id);
-			deleteModal.modal();
+			var restoreModal = $("#restoreModal");
+			restoreModal.find('input[name=id]').val(link.dataset.id);
+			restoreModal.modal();
 		});
 	});
 	$(document).ready(function(){

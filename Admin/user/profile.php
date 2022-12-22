@@ -16,20 +16,22 @@
 </head>
 <body>
 	<div class="contain h-100">
-		<?php include('../user/base.php');?>
-		<div class="main">
-			<div class="side">
-				<h1 class="ml-4 pt-2"><i class="fas fa-users"></i> User Management</h1>
-				<hr>
+		<?php include('base.php');?>
+		<div class="row">
+			<div class="col">
+				<h1 class="ms-5 pt-2"><i class="fa-solid fa-user"></i> User Profile</h1>
+				<hr class="mb-0 pb-0">
 			</div>
-			<div class="first_side ml-5 mt-5 mr-3">
-				<div style="width: 250px;height: 250px;">
-					<?php echo "<img class='img-fluid p-2 h-100 w-100' src='../images/".$row['image']."'>";?>
-				</div>
+
 			<form method="post" enctype="multip+ ':' + seconds + ' ' art/form-data">
-			</div>
-			<div class="second_side mt-2">
-					<table class="table-responsive mt-5">
+			<div class="card ms-4 me-4 mb-3">
+			<div class="row g-0">
+				<div class="col-md-4 ">
+				<img src="../../images/<?php echo $row['image']; ?>" style="height: 20rem; width:auto" class="img-fluid rounded-start" alt="...">
+				</div>
+				<div class="col-md-8">
+				<div class="card-body ms-3 ms-lg-0 p-0 text-start">
+				<table class="table-responsive mt-2">
 						<p><?php include('../error.php');?></p>
 						<tbody>
 							<tr>
@@ -45,23 +47,29 @@
 					</table>
 					<div class="text-left mt-4">
 						<a title="Edit" href="../user/update_profile.php?id=<?php echo $row['id'];?>" class="btn btn-info"><i class="fas fa-user-edit"></i> Edit </a>
-						<button type="button" id="user" title="Change Password?" class="btn btn-success" data-toggle="modal" data-target="#modal-user"><i class="fas fa-edit"></i> Change Password</button>
+						<button type="button" id="user" title="Change Password?" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-user"><i class="fas fa-edit"></i> Change Password</button>
 					</div>
-				</form>
-			<?php } ?>
+					
+				</div>
+				</div>
 			</div>
+			</div>
+			</form>
+			<?php 
+			} 
+			?>
 		</div> 
 	</div>
 	<script src="../../bootstrap4/jquery/jquery.min.js"></script>
 	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
+	<?php include('../user/changepassword.php');
+		include('../user/error.php');
+	include('../user/alert.php');?>
 	<script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
       return new bootstrap.Popover(popoverTriggerEl)
     })
 	</script>
-	<?php include('../user/changepassword.php');
-		include('../user/error.php');
-	include('../user/alert.php');?>
 </body>
 </html>

@@ -1,19 +1,18 @@
-<div id="deleteModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false">  
+<div id="restoreModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false">  
 	<div class="modal-dialog" role="document">  
 		<div class="modal-content">
-			<form action="delete.php" method="GET">
-		   		<div class="modal-header" style="background-color:#F44336;"> 
+			<form action="restore.php" method="GET">
+		   		<div class="modal-header bg-primary" > 
 					<h3>Delete!</h3>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
 		   		</div>
 				<div class="modal-body">
-					<p>Are you sure you want to delete this user?</p>
-					<p><small>This action cannot be undoned.</small></p>
+					<p>Are you sure you want to restore this user?</p>
 				</div> 
 				<div class="modal-footer">
 					<input type="hidden" name="id" value="" />
 					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
-					<button class="btn btn-danger" type="submit">Delete</button>  
+					<button class="btn btn-primary" type="submit">Restore</button>  
 				</div>
 			</form>  
 		</div>  

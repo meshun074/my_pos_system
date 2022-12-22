@@ -21,6 +21,7 @@ $success = isset($_GET['success']);
 		if ($success) {
 			echo '<script>swal("Success","Successfully Added!","success");</script>';
 		}
+		
 		?>
 		<div class="pr-1">
 			<div>

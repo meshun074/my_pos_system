@@ -201,8 +201,10 @@ $(document).ready(function(){
 					success : function(data){
 						if(data=="success"){
 							window.location.href='../employee/salesreturn.php?success="1"';
-						}else{
-							alert(data)
+						}else if(data=="logout"){
+							window.location.href='../employee/add_sales_return.php?logout'
+						}
+						else{							
 							window.location.href='../employee/add_sales_return.php?failure';
 						}
 					// alert(data); /* alerts the response from php.*/

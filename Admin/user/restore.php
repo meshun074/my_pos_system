@@ -2,13 +2,13 @@
 	if(isset($_GET['id'])){ 
 		$id	= $_GET['id'];
         $user = $_SESSION['username'];
-		$query = "UPDATE users SET deleted='TRUE' WHERE id = '$id'"; 
+		$query = "UPDATE users SET deleted='FALSE' WHERE id = '$id'"; 
     	$result = mysqli_query($db, $query);
     	if($result == true){
     		$insert 	= "INSERT INTO logs (username,purpose) VALUES('$user','User Deleted')";
  			mysqli_query($db,$insert);
-			header("location: user.php?deleted");
+			header("location: user.php?restore");
     	}else{
-    		header("location: user.php?undelete");
+    		header("location: user.php?unrestore");
     	}
     }	

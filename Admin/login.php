@@ -10,7 +10,7 @@ if (isset($_POST['login'])){
 
 
 	if($position == 'Employee'){
-		$query 		= "SELECT * FROM users WHERE username = '$username' AND position = '$position'";
+		$query 		= "SELECT * FROM users WHERE username = '$username' AND position = '$position' AND deleted='FALSE'";
 		
 		$result 	= mysqli_query($db, $query);
 
@@ -27,7 +27,7 @@ if (isset($_POST['login'])){
 			}
 			if($count==1)
 			{
-				$query 		= "SELECT * FROM users WHERE id = '$id[0]'";
+				$query 		= "SELECT * FROM users WHERE id = '$id[0]' AND AND deleted='FALSE'";
 				$result 	= mysqli_query($db, $query);
 			}else{
 				array_push($error, "Wrong username/password!");	
@@ -49,7 +49,7 @@ if (isset($_POST['login'])){
 
 	}else{
 
-		$query 		= "SELECT * FROM users WHERE username = '$username' AND position = '$position'";
+		$query 		= "SELECT * FROM users WHERE username = '$username' AND position = '$position' AND deleted='FALSE'";
 		$result 	= mysqli_query($db, $query);
 
 		if($result->num_rows >0){
@@ -65,7 +65,7 @@ if (isset($_POST['login'])){
 			}
 			if($count==1)
 			{
-				$query 		= "SELECT * FROM users WHERE id = '$id[0]'";
+				$query 		= "SELECT * FROM users WHERE id = '$id[0]' AND deleted='FALSE'";
 				$result 	= mysqli_query($db, $query);
 			}else{
 				array_push($error, "Wrong username/password!");	

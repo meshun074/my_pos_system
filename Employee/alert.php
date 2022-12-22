@@ -20,5 +20,8 @@
 	if($failure){
 		echo '<script>swal("Unsuccesful","Customer not found!","error");</script>';
 	}
+	if($logout){
+		echo '<script>swal("Unsuccesful","You user not Available!","error");</script>';
+	}
 
 ?>

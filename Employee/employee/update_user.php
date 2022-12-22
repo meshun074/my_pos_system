@@ -6,7 +6,7 @@ $username = $_SESSION['username'];
 
 if (isset($_GET['id'])) {
 	$id   =   $_GET['id'];
-	$sql  =   "SELECT * FROM users WHERE username = '$username'";
+	$sql  =   "SELECT * FROM users WHERE username = '$username' AND deleted='FALSE'";
 	$result   = mysqli_query($db, $sql);
 	$row  =   mysqli_fetch_array($result);
 

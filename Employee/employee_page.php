@@ -5,10 +5,11 @@ if (!isset($_SESSION['username'])) {
 }
 $added = isset($_GET['added']);
 $undelete = isset($_GET['undelete']);
-$updated = '';
-$deleted = '';
-$error = "";
+$updated = isset($_GET['updates']);
+$deleted = isset($_GET['delete']);
+$error = isset($_GET['error']);
 $failure = isset($_GET['failure']);
+$logout = isset($_GET['logout']);
 $query 	= "SELECT * FROM `customer`";
 $show	= mysqli_query($db, $query);
 if (isset($_SESSION['username'])) {
@@ -34,6 +35,7 @@ if (isset($_SESSION['username'])) {
 
 			<body>
 				<div class="container-fluid">
+					<?php include('alert.php'); ?>
 					<div class="row h-100">
 						<div class="col-12 col-md-6 text-white" style="background-color: #1b1464; ">
 							<div class="row h-100 ">

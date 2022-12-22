@@ -3,6 +3,10 @@
 		echo 
 			'<script>swal("","Successfully Deleted!","success");</script>';
 		}
+	if($restore){
+		echo 
+			'<script>swal("","Successfully Restored!","success");</script>';
+		}
 	if($added){
 		echo 
 			'<script>swal("","Successfully Added!","success");</script>';
@@ -13,6 +17,9 @@
 	}
 	if($undelete){
 		echo '<script>swal("","Cannot Delete this one!","warning");</script>';
+	}
+	if($unrestore){
+		echo '<script>swal("","Cannot Restore this one!","warning");</script>';
 	}
 	if($error){
 		echo '<script>swal("","Cannot Delete this item!","warning");</script>';

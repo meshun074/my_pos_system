@@ -5,7 +5,7 @@ include('../set.php');
 
 if (isset($_SESSION['username'])) {
 	$username = $_SESSION['username'];
-	$sql = "SELECT * FROM users WHERE username = '$username'";
+	$sql = "SELECT * FROM users WHERE username = '$username' AND deleted='FALSE'";
 	$result = mysqli_query($db, $sql);
 	$row = mysqli_fetch_array($result);
 ?>

@@ -1,7 +1,7 @@
 <?php 
 	include('../server/connection.php');	
 	include '../set.php';
-	$success = isset($_GET['success']);
+	$logout = isset($_GET['logout']);
 	$failure = isset($_GET['failure']);
 
 	$sql  = "SELECT `product_id`,`product_name`,`product_size`,`unit_per_price` FROM `products`";
@@ -35,12 +35,15 @@
 		<?php include('../employee/base1.php');
 		if($failure){
 			echo '<script>swal("Unsuccessful","Failed to add sales return!","error");</script>';
+		}elseif($logout)
+		{
+			echo '<script>swal("Unsuccessful","User not Available","error");</script>';
 		}
 		?>
 		<div>
 			<h1 class="ms-4 pt-2"><i class="fa-solid fa-cash-register"></i> Recieve Sales Return</h1>
 			<hr>
-			<div class="mt-2 ms-5"><label><b>Add New Customer:</b></label><button class="ms-3 employee_background btn-sm btn-primary border border-primary" data-toggle="modal" data-target=".modal"  style="padding:5px;"><span class="badge badge-info"><i class="fas fa-user-plus"></i> New</span></button></div>
+			<div class="mt-2 ms-5"><label><b>Add New Customer:</b></label><button class="ms-3 employee_background btn-sm btn-primary border border-primary" data-bs-toggle="modal" data-bs-target=".modal"  style="padding:5px;"><span class="badge badge-info"><i class="fas fa-user-plus"></i> New</span></button></div>
 			<form method="post" id="invoice_id">
 				<div class="table-responsive mt-2 ps-4 pe-4">
 					<table class="table table-striped table-bordered table-sm">

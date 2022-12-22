@@ -15,7 +15,7 @@
 		<div class="modal-content" style="width:70%; margin-left: 20%;">
 	  		<div class="modal-header bg-secondary">
 				<h4 class="modal-title text-light" id="exampleModalCenterTitle" ><strong>Add New Customer</strong></h4>
-				<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
 	  		</div>
 	  	<div class="modal-body">
 			<div class="container-fluid">
@@ -24,7 +24,7 @@
 		  			<div style="text-align:center">
 		  				<input type="hidden" name="size" class="form-control-sm" value="1000000">
 		  				<input type="hidden" id="user1" name="user" class="form-control-sm" value="<?php echo $_SESSION['username'];?>">
-		  				<img class="mb-1" width="150" height="150" src="../images/user2.png"/>
+		  				<img class="mb-1" width="150" height="150" src="../../images/user2.png"/>
 		  			</div>
 		  				<small><div class="input-group mb-2"><div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-pen-alt"></i></span></div>		  				
 		  				<input class="form-control form-control-sm" type="text" name="fname" id="fname1" placeholder="Enter First name" required></div>
