@@ -193,10 +193,10 @@ if (isset($_SESSION['username'])) {
 												<tbody>
 													<tr>
 														<td class="p-0">
-															<button id="buttons" type="button" name='enter' class="Enter btn  border  w-100" style="background-color: #0d0d0d; color: #D9A84E;"><i class="fas fa-handshake"></i> Finish</button>
+															<button id="buttons" type="button" name='enter' class="Enter btn btn-outline-dark border  w-100" style="background-color: #0d0d0d; color: #D9A84E;"><i class="fas fa-handshake"></i> Finish</button>
 
 														</td>
-														<td class="p-0 "><button id="buttons" type="button" class="cancel btn border w-100" style="background-color: #0d0d0d; color: #D9A84E;"><i class="fas fa-ban"></i> Cancel</button>
+														<td class="p-0 "><button id="buttons" type="button" class="cancel btn btn-outline-dark border w-100" style="background-color: #0d0d0d; color: #D9A84E;"><i class="fas fa-ban"></i> Cancel</button>
 														</td>
 													</tr>
 												</tbody>

@@ -8,7 +8,6 @@
 		   		</div>
 				<div class="modal-body">
 					<p>Are you sure you want to delete this user?</p>
-					<p><small>This action cannot be undoned.</small></p>
 				</div> 
 				<div class="modal-footer">
 					<input type="hidden" name="id" value="" />

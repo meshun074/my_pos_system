@@ -7,7 +7,7 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
 		   		</div>
 				<div class="modal-body">
-					<p>Are you sure you want to restore this user?</p>
+					<p>Are you sure you want to restore this supplier?</p>
 				</div> 
 				<div class="modal-footer">
 					<input type="hidden" name="id" value="" />

@@ -4,7 +4,7 @@
 	if (isset($_POST['products'])){
 
 		$name = mysqli_real_escape_string($db,$_POST['products']);
-		$show 	= "SELECT * FROM products WHERE product_name LIKE '$name%' AND quantity > 0 OR product_id LIKE '$name%' AND quantity > 0";
+		$show 	= "SELECT * FROM products WHERE product_name LIKE '$name%' AND quantity > 0 AND deleted='FALSE' OR product_id LIKE '$name%' AND quantity > 0 AND deleted='FALSE'";
 		$query 	= mysqli_query($db,$show);
 		if(mysqli_num_rows($query)>0){
 			while($row = mysqli_fetch_array($query)){
@@ -22,71 +22,3 @@
 			echo "<div class='col'></div>No Products found!<div class='col'></div>";
 		}
 	}?>
- <!-- <div class='col'>
-<div class='card' style='width: 18rem;'>
-  <img src='...' class="card-img-top" alt='...'>
-  <div class='card-body'>
-    <h5 class='card-title'>Card title</h5>
-    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    
-  </div>
-  <div class='card-footer'>
-  <a href='#' class='btn btn-primary'>Add Product</a>
-      </div>
-</div>
- </div> -->
-
-<!-- <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-  <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    
-  </div>
-  <div class="card-footer">
-  <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-</div>
-  </div>
-  <div class="col">
-  <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    
-  </div>
-  <div class="card-footer">
-  <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-</div>
-  </div>
-  <div class="col">
-  <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    
-  </div>
-  <div class="card-footer">
-  <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-</div>
-  </div>
-  <div class="col">
-  <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    
-  </div>
-  <div class="card-footer">
-  <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-</div>
-  </div>
-</div> -->

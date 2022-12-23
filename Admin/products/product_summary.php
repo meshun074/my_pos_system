@@ -1,12 +1,14 @@
 <?php 
 	include("../server/connection.php");
 	include '../set.php';
-	$sql = "SELECT * FROM products";
+	$sql = "SELECT * FROM products WHERE deleted='FALSE'";
 	$result	= mysqli_query($db, $sql);
+	$restore = isset($_GET['restore']);
 	$deleted = isset($_GET['deleted']);
 	$added  = isset($_GET['added']);
 	$updated = isset($_GET['updated']);
 	$undelete = isset($_GET['undelete']);
+	$unrestore = isset($_GET['unrestore']);
 	$error = isset($_GET['error']);
 	$failure = "";	
 ?>

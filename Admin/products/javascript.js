@@ -10,6 +10,15 @@ $(function () {
 			deleteModal.modal();
 		});
 	});
+	$(function(){
+		$('button.restore').click(function(e){
+			e.preventDefault();
+			var link = this;
+			var restoreModal = $("#restoreModal");
+			restoreModal.find('input[name=id]').val(link.dataset.id);
+			restoreModal.modal();
+		});
+	});
 
 	
 	$(document).ready(function(){

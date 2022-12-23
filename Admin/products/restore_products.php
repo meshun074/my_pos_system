@@ -2,12 +2,12 @@
 	<div class="modal-dialog" role="document">  
 		<div class="modal-content">
 			<form action="restore.php" method="GET">
-		   		<div class="modal-header bg-primary" > 
+		   		<div class="modal-header bg-primary"> 
 					<h3>Restore!</h3>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+					<button type="button" class="btn-close " data-bs-dismiss="modal" aria-hidden="true"></button>
 		   		</div>
 				<div class="modal-body">
-					<p>Are you sure you want to restore this user?</p>
+					<p>Are you sure you want to restore this product?</p>					
 				</div> 
 				<div class="modal-footer">
 					<input type="hidden" name="id" value="" />

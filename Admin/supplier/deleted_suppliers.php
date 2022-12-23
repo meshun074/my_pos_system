@@ -2,7 +2,7 @@
 	include("../server/connection.php");
 	include '../set.php';
 	
-	$sql = "SELECT * FROM supplier WHERE deleted='FALSE'";
+	$sql = "SELECT * FROM supplier WHERE deleted='TRUE'";
 	$result	= mysqli_query($db, $sql);
 	$restore = isset($_GET['restore']);
 	$deleted = isset($_GET['deleted']);
@@ -24,7 +24,7 @@
 	<div class="contain h-100">
 		<?php include('../supplier/base.php');?>
 		<div>
-			<h1 class="ms-5 pt-2"><i class="fas fa-user-tie"></i> Supplier Management</h1>
+			<h1 class="ms-5 pt-2"><i class="fa-solid fa-user-xmark"></i> Deleted Suppliers</h1>
 			<hr>
 			<?php include('../alert.php');?>
 			<div class="table-responsive mt-4 ps-4 pe-4" id="su">
@@ -49,10 +49,9 @@
 						<td><?php echo $row['firstname'].'&nbsp'.$row['lastname'];?></td>
 						<td><?php echo $row['address'];?></td>
 						<td><?php echo $row['contact_number'];?></td>
-						<td>
-							<a name="edit" title="Edit" style='font-size:10px; border-radius:5px;padding:4px;' href="update_supplier.php?id=<?php echo $row['supplier_id'];?>" class="btn btn-info btn-xs"><i class="fas fa-user-edit"></i></a>
+						<td>							
 							<button type="button" name="view" value="View" style='font-size:10px; border-radius:5px;padding:4px;' id="<?php echo $row['supplier_id'];?>" class="btn btn-success btn-xs view_data"><i class="fas fa-eye"></i></button>
-							<button type="button" name="delete" title="Delete" value="Delete" style='font-size:10px; border-radius:5px;padding:4px;' data-id="<?php echo $row['supplier_id'];?>"  class="delete btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#deleteModal" title="Delete"><i class="fas fa-trash"></i></button>
+							<button type="button" name="restore" title="Restore" value="Restore" style='font-size:10px; border-radius:5px;padding:4px;' data-id="<?php echo $row['supplier_id'];?>"  class="restore btn btn-primary btn-xs" data-bs-toggle="modal" data-bs-target="#restoreModal" ><i class="fa-solid fa-recycle"></i></button>
 						</td>
 					</tr>
 					<?php } ?>
@@ -65,7 +64,7 @@
 		</div>
 	</div>
 	<?php include('../supplier/view_modal.php');?>
-	<?php include('../supplier/delete_supplier.php');?>
+	<?php include('../supplier/restore_supplier.php');?>
 	<script src="../../bootstrap4/jquery/jquery.min.js"></script>
 	<script src="../../bootstrap4/js/jquery.dataTables.js"></script>
 	<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
