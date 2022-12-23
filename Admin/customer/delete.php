@@ -4,10 +4,17 @@
         $use = $_SESSION['username'];
 		$query = "DELETE FROM customer WHERE customer_id = '$id'"; 
     	if(mysqli_query($db, $query)==true){
-    		$logs 	= "INSERT INTO logs (username,purpose) VALUES('$user','Customer deleted')";
+    		$logs 	= "INSERT INTO logs (username,purpose) VALUES('$user','Customer $id deleted')";
  			$insert = mysqli_query($db,$logs);
 			header("location: customer.php?deleted");
     	}else{
-    		header("location: customer.php?undelete");
-    	}
+			$query = "UPDATE customer SET deleted='TRUE' WHERE customer_id = '$id'"; 
+			if(mysqli_query($db, $query)==true){
+				$logs 	= "INSERT INTO logs (username,purpose) VALUES('$user','Customer $id deleted')";
+				$insert = mysqli_query($db,$logs);
+				header("location: customer.php?deleted");
+			}else{ 
+				header("location: customer.php?undelete");
+			}
+		}
     }	

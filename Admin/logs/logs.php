@@ -1,7 +1,7 @@
 <?php
 include("../server/connection.php");
 include '../set.php';
-$sql = "SELECT id, username, purpose, DATE(logs_time) AS date, TIME(logs_time) AS time FROM logs ORDER BY date, time DESC";
+$sql = "SELECT id, username, purpose, DATE(logs_time) AS date, TIME(logs_time) AS time FROM logs ORDER BY id DESC";
 $result	= mysqli_query($db, $sql);
 ?>
 <!DOCTYPE html>

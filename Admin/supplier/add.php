@@ -8,7 +8,7 @@
 		$address 	= mysqli_real_escape_string($db, $_POST['address']);
 		$number 	= mysqli_real_escape_string($db, $_POST['number']);
 	  	$image    	= $_FILES['image']['name'];
-		$target   	= "../images/".basename($_FILES['image']['name']);
+		$target   	= "../../images/".basename($_FILES['image']['name']);
 		$user 		= $_SESSION['username'];
 
 		$sql  = "INSERT INTO supplier (company_name,firstname,lastname,address,contact_number,image) VALUES ('$company','$firstname','$lastname','$address','$number','$image')";

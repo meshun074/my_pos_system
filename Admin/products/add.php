@@ -13,7 +13,7 @@
 		$remarks	= mysqli_real_escape_string($db, $_POST['remarks']);
 		$supplier   = mysqli_real_escape_string($db, $_POST['supplier']);
 	  	$image   	= $_FILES['image']['name'];
-		$target   	= "../images/".basename($_FILES['image']['name']);
+		$target   	= "../../images/".basename($_FILES['image']['name']);
         $user 		= $_SESSION['username'];
 
 		$sql  = "INSERT INTO `products` (product_name, barcode, product_size, cost_price, profit, sell_price, unit_per_price, min_stocks, remarks, supplier_id, images) VALUES ('$name',$barcode,'$size','$cprice','$profit','$sprice','$unit','$min_stock','$remarks','$supplier','$image')";

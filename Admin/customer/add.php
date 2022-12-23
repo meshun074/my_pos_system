@@ -7,7 +7,7 @@
 		$address	= mysqli_real_escape_string($db, $_POST['address']);
 		$number		= mysqli_real_escape_string($db, $_POST['number']);
 	  	$image   	= $_FILES['image']['name'];
-		$target   	= "../images/".basename($_FILES['image']['name']);
+		$target   	= "../../images/".basename($_FILES['image']['name']);
 		$user 		= $_SESSION['username'];
 
 		$sql  = "INSERT INTO customer (firstname,lastname,address,contact_number,image) VALUES ('$fname','$lname','$address','$number','$image')";

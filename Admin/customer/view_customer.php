@@ -6,10 +6,14 @@
 	  	$result = mysqli_query($db, $query);  
 
 	  	while($row = mysqli_fetch_array($result)){
-			echo "<div class='d-inline-flex  mt-2'>";
-			echo "<img width='140' height='140' style='border:1px; border-radius:2px' src='../images/".$row['image']."'>";
+			echo "<div class='card mb-3' >
+			<div class='row g-0'>
+			<div class='col-md-4  mt-2'>";
+			echo "<img width='150' height='150' style='border:1px; border-radius:2px' src='../../images/".$row['image']."'>";
 			echo "</div>";
 			$output .= '  
+				<div class="col-md-8">
+				<div class="card-body"> 
 	  			<div class="table-responsive">  
 		   		<table class="w-100">';   
 		   	$output .= '
@@ -29,7 +33,11 @@
 	  }  
 	  $output .= '  
 		   </table>  
-	  		</div>  
+	  		</div>
+			  </div>
+			  </div>
+			</div>
+		  </div>  
 	  ';
 	  echo $output;  
  	}  
