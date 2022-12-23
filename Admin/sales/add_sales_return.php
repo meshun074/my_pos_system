@@ -4,13 +4,13 @@
 	$success = isset($_GET['success']);
 	$failure = isset($_GET['failure']);
 
-	$sql  = "SELECT `product_id`,`product_name`,`product_size`,`unit_per_price` FROM `products`";
+	$sql  = "SELECT `product_id`,`product_name`,`product_size`,`unit_per_price` FROM `products` WHERE deleted='FALSE'";
 	$result = mysqli_query($db, $sql);
 	if(!$result->num_rows >0){
 		echo '<script>swal("No Products","No available products for delivery","error");</script>';
 	}
 	
-	$sql1  = "SELECT *FROM `customer`";
+	$sql1  = "SELECT *FROM `customer` WHERE deleted='FALSE'";
 	$result1 = mysqli_query($db, $sql1);
 	if(!$result1->num_rows >0){
 		echo '<script>swal("No Suppliers","No available suppliers to make delivery","error");</script>';
@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');?>
+	<?php include('../../templates/head1.php');?>
 	<style type="text/css">
 		#invoice-item-table tr th{
 			font-size: 12px;
@@ -38,10 +38,14 @@
 		}
 		?>
 		<div>
-			<div class="mt-1 ml-5"><label><b>New Customer:</b></label><button class="btn-sm btn-info border" data-toggle="modal" data-target=".modal"  style="padding:5px;"><span class="badge badge-info"><i class="fas fa-user-plus"></i> New</span></button></div>
+			<div>
+				<h1 class="ms-5 pt-2" ><i class="fa-solid fa-cart-arrow-down"></i> Add Sales Returns</h1>
+				<hr>
+			</div>
+			<div class="mt-1 ms-5 "><label><b>New Customer:</b></label><button class="ms-2 btn-sm btn-primary border" data-toggle="modal" data-target=".modal"  style="padding:5px;"><span class="badge badge-info"><i class="fas fa-user-plus"></i> New</span></button></div>
 			<form method="post" id="invoice_id">
-				<div class="table-responsive mt-1 pl-5 pr-5">
-					<table class="table table-striped table-bordered table-sm">
+				<div class="table-responsive mt-1 ps-4 pe-4">
+					<table class="table mt-2 table-striped table-bordered table-sm">
 						<tr>
 							<td>
 								<div class="row mb-1">
@@ -98,7 +102,7 @@
 						</tr>
 						<tr>
 							<td align="right">
-								<input type="submit" name="create_sales_return" value="Submit" id="create_sales_return" class="btn btn-sm btn-info mr-5"/>
+								<input type="submit" name="create_sales_return" value="Submit" id="create_sales_return" class="admin_background btn btn-sm btn-outline-dark mr-5"/>
 								<b>Grand Total:&nbsp<h4 id="final_total_amount">₵ 0.00</h4></b>
 							</td>
 						</tr>
@@ -109,13 +113,12 @@
 	</div>
 	
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="../bootstrap4/jquery/jquery.min.js"></script>
-	<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" type="text/javascript"></script>
-	<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js" type="text/javascript"></script>
-	<script src="../bootstrap4/jquery/datepicker.js"></script>
-	<script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
-	<script src="../bootstrap4/js/typeahead1.js"></script>
+	<script src="../../bootstrap4/jquery/jquery.min.js"></script>
+	<script src="../../bootstrap4/js/jquery.dataTables.js"></script>
+	<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
+	<script src="../../bootstrap4/jquery/datepicker.js"></script>
+	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
+	<script src="../../bootstrap4/js/typeahead1.js"></script>
 	<script src="../sales/script.js"></script>
 	<script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))

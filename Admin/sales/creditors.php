@@ -13,7 +13,7 @@ $failure = "";
 <!DOCTYPE html>
 <html>
 <head>
-    <?php include('../templates/head1.php');?>
+    <?php include('../../templates/head1.php');?>
 </head>
 <body>
 <div class="contain h-100">
@@ -21,16 +21,16 @@ $failure = "";
         include('../print.php');
          ?>
     <div id="print">
-        <h1 class="ml-4 pt-2"><i class="fas fa-box-open"></i> Creditors Management</h1>
+        <h1 class="ms-5 pt-2"><i class="fa-solid fa-credit-card"></i> Creditors Management</h1>
         <hr>
         <?php
         if($updated){
             echo '<script>swal({title: "Successfully Updated!",icon: "success",buttons: "Okay"}).then((okay)=>{if(okay){ window.location.href="creditors.php";}});</script>';
         }
         ?>
-        <div class="table-responsive mt-4 pl-5 pr-5 pt-2" id="p">
+        <div class="table-responsive mt-4 ps-4 pe-4 pt-2" id="p">
             <table class="table table-striped table-bordered" id="product_table" style="margin-top: -22px;">
-                <thead>
+                <thead class="admin_background">
                 <tr>
                     <th scope="col" class="column-text">Reciept Number</th>
                     <th scope="col" class="column-text">Customer</th>
@@ -65,16 +65,16 @@ $failure = "";
                 </tbody>
             </table>
         </div>
-        <div align="right" class="container p-5">
-            <button  class="btn btn-info" onclick="printSection('p')">Print Creditors</button>
+        <div align="right" class="container pe-5 pt-4">
+            <button  class="admin_background btn btn-outline-dark" onclick="printSection('p')">Print Creditors</button>
         </div>
     </div>
 </div>
 
-<script src="../bootstrap4/jquery/jquery.min.js"></script>
-<script src="../bootstrap4/js/jquery.dataTables.js"></script>
-<script src="../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
+<script src="../../bootstrap4/jquery/jquery.min.js"></script>
+<script src="../../bootstrap4/js/jquery.dataTables.js"></script>
+<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
 <script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {

@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$('#sales_return_table').dataTable();
+    $('#product_table').dataTable();
 	
 });
 $(document).ready(function(){

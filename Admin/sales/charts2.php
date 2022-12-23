@@ -102,7 +102,7 @@ foreach($result3 as $data)
 <!DOCTYPE html>
 <html>
 <head>
-    <?php include('../templates/head1.php');
+    <?php include('../../templates/head1.php');
     include('../print.php');
     ?>
     <script src="../package/dist/chart.umd.js"></script>
@@ -112,13 +112,11 @@ foreach($result3 as $data)
     <?php
     include('../sales/base.php');
     ?>
-    <div class="pr-1">
-        <h1 class="ml-4 pt-2"><i class="fas fa-money-bill-alt"></i>Sales Chart</h1>
+    <div class="pe-1">
+        <h1 class="ms-5 pt-2"><i class="fa-solid fa-square-poll-vertical"></i> Sales Chart</h1>
         <hr>
-        <div id="chart" style="width: 80%;">
+        <div class="ms-4 mb-4" id="chart" style="width: 80%;">
         <h2 ><div class="text-center">
-            Sales Charts
-            <!-- <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
             <div class="text-center">
                 <button class="btn btn-outline-secondary" id="day" type="button">Days</button>
                 <button autofocus class="btn btn-outline-secondary" id="week" type="button">Weeks</button>
@@ -133,13 +131,13 @@ foreach($result3 as $data)
         
     </div>
 </div>
-<script src="../bootstrap4/jquery/jquery.min.js"></script>
-<script src="bootstrap4/jquery/accounting.min.js"></script>
-<script src="../bootstrap4/jquery/datepicker.js"></script>
-<script src="../bootstrap4/js/jquery.dataTables.js"></script>
+<script src="../../bootstrap4/jquery/jquery.min.js"></script>
+<script src="../../bootstrap4/jquery/accounting.min.js"></script>
+<script src="../../bootstrap4/jquery/datepicker.js"></script>
+<script src="../../bootstrap4/js/jquery.dataTables.js"></script>
 
-<script src="../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
+<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
 <script src="../sales/javascript.js"></script>
 <script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))

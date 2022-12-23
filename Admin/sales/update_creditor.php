@@ -11,39 +11,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');
+	<?php include('../../templates/head1.php');
 	?>
 
 </head>
 <body>
 	<div class="contain h-100">
-		<div class="header bg-dark">
-			<img class="img-fluid w-100 mt-2 ml-1" src="../images/logo.png" >
-		</div>
-	<div class="sidebar">
-	<button><h3><i class="fas fa-tachometer-alt"></i>  Dashboard</h3></button>
-	<button id="sidebar_button" onclick="window.location.href='../sales/sales.php'"><i class="fas fa-list-ul"></i> Sales</button>
-	<button id="sidebar_button" onclick="window.location.href='../sales/salesreturn.php'"><i class="fas fa-list-ul"></i> Sales Return</button>
-	<button id="sidebar_button" onclick="window.location.href='../sales/creditors.php'"><i class="fas fa-truck"></i> Creditors</button>
-	<button id="sidebar_button" onclick="window.location.href='../sales/charts2.php'"><i class="fas fa-truck"></i> Sales Charts</button>
-	<button id="sidebar_button" type="button" data-toggle="popover" title="Product Management" data-content="Here you will create, update, delete and view products." data-placement="bottom"><i class="fas fa-question"></i> Help</button>
-	<div class="fixed-bottom">
-		<button class="btn m-2 p-2" id="sidebar_button" onclick="window.location.href='../sales/creditors.php'"><i class="fas fa-arrow-alt-circle-left"></i> Back</button>
-	</div>
-</div>
+	<?php 
+			include('../sales/base.php');
+		?>
         <form method="post" action="update.php" class="pr-4">
 		<div class="main">
 			<div class="side">
 				<h1 class="ml-4">Creditors Management</h1>
 				<hr>
-				<h2 class="text-center" style="margin-bottom: 30px;"><?php echo $row1['firstname']. " " . $row1['lastname'];?></h2>
+				<h2 class="text-center" ><?php echo $row1['firstname']. " " . $row1['lastname'];?></h2>
 				<br><br>
 			</div>
 
 
 			<div class="second_side table-responsive">
 					<p class="bg-danger w-50"><?php echo $msg;?></p>
-					<table class="mt-5">
+					<table class="table table-borderless">
 						<tbody>
 							<tr style="visibility: hidden">
 								<td  valign="baseline">reciept_no:</td>
@@ -78,8 +67,8 @@
 		</div>
 	</div>
 
-	<script src="../bootstrap4/jquery/jquery.min.js"></script>
-	<script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
+	<script src="../../bootstrap4/jquery/jquery.min.js"></script>
+	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
 	<script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
