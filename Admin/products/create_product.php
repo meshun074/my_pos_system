@@ -140,8 +140,8 @@ $success = isset($_GET['success']);
                         </tbody>
                     </table>
                     <div class="container p-1">
-                        <button type="submit" name="add_product" class="admin_background btn btn-warning"><i class="fas fa-thumbs-up"></i> Submit</button>
-                        <button class="admin_background btn btn-warning" onclick="window.location.href='../products/create_product.php'"><i class="fas fa-ban"></i> Cancel</button>
+                        <button type="submit" name="add_product" class="admin_background btn btn-outline-dark"><i class="fas fa-thumbs-up"></i> Submit</button>
+                        <button class="admin_background btn btn-outline-dark" onclick="window.location.href='../products/create_product.php'"><i class="fas fa-ban"></i> Cancel</button>
                     </div>
                     </form>
                 </div>

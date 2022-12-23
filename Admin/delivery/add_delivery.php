@@ -40,7 +40,7 @@
 		<div>
 		<h1 class="ms-5 pt-2"><i class="fa-solid fa-truck-fast"></i> Record Delivery</h1>
 			<hr>
-			<div class="mt-1 ms-4"><label><b>New Supplier:</b></label><button class="btn-sm btn-warning border ms-2" data-bs-toggle="modal" data-bs-target=".modal"  style="padding:5px;"><span class="badge badge-info"><i class="fas fa-user-plus"></i> New</span></button></div>
+			<div class="mt-1 ms-4"><label><b>New Supplier:</b></label><button class="btn-sm btn-primary border ms-2" data-bs-toggle="modal" data-bs-target=".modal"  style="padding:5px;"><span class="badge badge-info"><i class="fas fa-user-plus"></i> New</span></button></div>
 			<form method="post" id="invoice_id">
 				<div class="table-responsive mt-1 ps-4 pe-4">
 					<table class="table table-striped table-bordered table-sm">
@@ -103,7 +103,7 @@
 						</tr>
 						<tr>
 							<td align="right">
-								<input type="submit" name="create_delivery" value="Submit" id="create_delivery" class="btn btn-sm admin_background btn-warning me-3"/>
+								<input type="submit" name="create_delivery" value="Submit" id="create_delivery" class="btn btn-sm admin_background btn-outline-dark me-3"/>
 								<b>Grand Total:&nbsp<h4 id="final_total_amount">₵ 0.00</h4></b>
 							</td>
 						</tr>

@@ -97,6 +97,9 @@ ul li{
 	font-style: bold;
 }
 
+.Enter:hover, .cancel{
+	background-color: #000B0D;
+}
 
 .my-custom-scrollbar-a{
 	position: relative;

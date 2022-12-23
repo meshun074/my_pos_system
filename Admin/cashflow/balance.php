@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('../templates/head1.php');
+	<?php include('../../templates/head1.php');
     include('../print.php');
     ?>
 </head>
@@ -27,11 +27,11 @@
 
 		?>
 		<div >
-			<h1 class="ml-4 pt-2"><i class="fas fa-money-bill-alt"></i>Income Statement</h1>
-			<hr>
-			<div class="table-responsive mt-4 pl-5 pr-5" id="cash">
-				<h2 class="text-center">Income statement for the year <?php echo date("Y"); ?></h2>
-			<table class="table table-striped" id="balance_table" style="margin-top: -22px;">
+			<h1 class="ms-5 pt-2"><i class="fa-solid fa-receipt"></i> Income Statement</h1>
+			<hr class="mb-0 pb-0">
+			<div class="table-responsive mt-0 ps-4 pe-4" id="cash">
+				<h2 class="text-center mb-0">Income statement for the year <?php echo date("Y"); ?></h2>
+			<table class="mt-0 table table-sm table-striped" id="balance_table" >
 				<thead>
 					<tr>
 						<th scope="col" class="column-text"><h3>Revenue</h3></th>						
@@ -81,15 +81,15 @@
                     
 			</table>
 			</div>
-            <div align="right" class="container p-5">
-                <button  class="btn btn-info" onclick="printSection('cash')">Print Cashflow</button>
+            <div align="right" class="container p-2 pe-5">
+                <button  class="admin_background btn btn-outline-dark" onclick="printSection('cash')">Print Cashflow</button>
             </div>
 		</div>
 	</div>
-	<script src="../bootstrap4/jquery/jquery.min.js"></script>
-	<script src="../bootstrap4/js/jquery.dataTables.js"></script>
-	<script src="../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
-	<script src="../bootstrap4/js/bootstrap.bundle.min.js"></script>
+	<script src="../../bootstrap4/jquery/jquery.min.js"></script>
+	<script src="../../bootstrap4/js/jquery.dataTables.js"></script>
+	<script src="../../bootstrap4/js/dataTables.bootstrap4.min.js"></script>
+	<script src="../../bootstrap4/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#cashflow_table').dataTable();
