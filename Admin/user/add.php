@@ -2,7 +2,7 @@
 	$msg 	= '';
 	$error  = array();
 	if(isset($_POST['add'])){
-		$user 	= $_SESSSION['username'];
+		$user 	= $_SESSION['username'];
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
 		$lastname = mysqli_real_escape_string($db, $_POST['lastname']);
@@ -11,7 +11,7 @@
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 		$password1 = mysqli_real_escape_string($db, $_POST['password1']);
 	  	$image    = $_FILES['image']['name'];
-		$target   = "../images/".basename($_FILES['image']['name']);
+		$target   = "../../images/".basename($_FILES['image']['name']);
 
 		$query = "SELECT username FROM users WHERE username='$username'";
 		$result = mysqli_query($db, $query);

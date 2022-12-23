@@ -17,6 +17,19 @@ $(function () {
 			deleteModal.modal();
 		});
 	});
+
+	$(function () {
+		$('[data-toggle="popover"]').popover()
+  });
+  $(function(){
+	  $('button.restore').click(function(e){
+		  e.preventDefault();
+		  var link = this;
+		  var restoreModal = $("#restoreModal");
+		  restoreModal.find('input[name=id]').val(link.dataset.id);
+		  restoreModal.modal();
+	  });
+  });
 	
 	$(document).ready(function(){
 	/* function for activating modal to show data when click using ajax */
