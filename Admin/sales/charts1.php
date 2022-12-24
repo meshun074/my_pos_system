@@ -9,7 +9,10 @@ $sql = "SELECT DISTINCT t3.stotal-t3.sreturn AS AMOUNTS, IF( STRCMP(ADAY,DAY)=0,
   FROM 
   (SELECT SUM(total) AS AMOUNTS, YEAR(date(date)) AS YEARS FROM sales_return  GROUP BY YEAR(date(date)) ORDER BY YEAR(date(date))) t1 
   RIGHT JOIN 
-  (SELECT SUM(total) AS AMOUNTS, YEAR(date(date)) AS YEARS FROM sales  GROUP BY YEAR(date(date)) ORDER BY YEAR(date(date)) ) t2 
+  (SELECT IF(STRCMP(t4.YEARS,t5.YEARS)=0,t4.AMOUNTS-t5.AMOUNTS,t4.AMOUNTS) AS AMOUNTS, t4.YEARS FROM (
+SELECT SUM(total) AS AMOUNTS, YEAR(date(date)) AS YEARS FROM sales  GROUP BY YEAR(date(date)) ORDER BY YEAR(date(date))) t4
+LEFT JOIN
+(SELECT SUM(balance) AS AMOUNTS, YEAR(date(transaction_date)) AS YEARS FROM credits  GROUP BY YEAR(date(transaction_date)) ORDER BY YEAR(date(transaction_date)))t5 ON t4.YEARS=t5.YEARS ) t2 
   ON t1.YEARS = t2.YEARS
   UNION ALL
   
@@ -17,7 +20,10 @@ $sql = "SELECT DISTINCT t3.stotal-t3.sreturn AS AMOUNTS, IF( STRCMP(ADAY,DAY)=0,
   FROM 
   (SELECT SUM(total) AS AMOUNTS, YEAR(date(date)) AS YEARS FROM sales_return  GROUP BY YEAR(date(date)) ORDER BY YEAR(date(date))) t1 
   LEFT JOIN 
-  (SELECT SUM(total) AS AMOUNTS, YEAR(date(date)) AS YEARS FROM sales  GROUP BY YEAR(date(date)) ORDER BY YEAR(date(date)) ) t2 
+  (SELECT IF(STRCMP(t4.YEARS,t5.YEARS)=0,t4.AMOUNTS-t5.AMOUNTS,t4.AMOUNTS) AS AMOUNTS, t4.YEARS FROM (
+SELECT SUM(total) AS AMOUNTS, YEAR(date(date)) AS YEARS FROM sales  GROUP BY YEAR(date(date)) ORDER BY YEAR(date(date))) t4
+LEFT JOIN
+(SELECT SUM(balance) AS AMOUNTS, YEAR(date(transaction_date)) AS YEARS FROM credits  GROUP BY YEAR(date(transaction_date)) ORDER BY YEAR(date(transaction_date)))t5 ON t4.YEARS=t5.YEARS ) t2 
   ON t1.YEARS = t2.YEARS) AS t3";
 $result	= mysqli_query($db, $sql);
 
@@ -27,7 +33,10 @@ $sql1 = "SELECT DISTINCT t3.stotal-t3.sreturn AS AMOUNTS, IF( STRCMP(ADAY,DAY)=0
   FROM 
   (SELECT SUM(total) AS AMOUNTS, MONTHNAME(date(date)) AS MONTHS FROM sales_return WHERE YEAR(date(date))=YEAR(CURDATE()) GROUP BY MONTH(date(date)) ORDER BY MONTH(date(date))) t1 
   RIGHT JOIN 
-  (SELECT SUM(total) AS AMOUNTS, MONTHNAME(date(date)) AS MONTHS FROM sales WHERE YEAR(date(date))=YEAR(CURDATE()) GROUP BY MONTH(date(date)) ORDER BY MONTH(date(date)) ) t2 
+  (SELECT IF(STRCMP(t4.MONTHS,t5.MONTHS)=0,t4.AMOUNTS-t5.AMOUNTS,t4.AMOUNTS) AS AMOUNTS, t4.MONTHS FROM 
+(SELECT SUM(total) AS AMOUNTS, MONTHNAME(date(date)) AS MONTHS FROM sales WHERE YEAR(date(date))=YEAR(CURDATE()) GROUP BY MONTH(date(date)) ORDER BY MONTH(date(date)) ) t4
+LEFT JOIN
+(SELECT SUM(balance) AS AMOUNTS, MONTHNAME(date(transaction_date)) AS MONTHS FROM credits WHERE YEAR(date(transaction_date))=YEAR(CURDATE()) GROUP BY MONTH(date(transaction_date)) ORDER BY MONTH(date(transaction_date)))t5 ON t4.MONTHS=t5.MONTHS ) t2 
   ON t1.MONTHS = t2.MONTHS
   UNION ALL
   
@@ -35,7 +44,10 @@ $sql1 = "SELECT DISTINCT t3.stotal-t3.sreturn AS AMOUNTS, IF( STRCMP(ADAY,DAY)=0
   FROM 
   (SELECT SUM(total) AS AMOUNTS, MONTHNAME(date(date)) AS MONTHS FROM sales_return WHERE YEAR(date(date))=YEAR(CURDATE()) GROUP BY MONTH(date(date)) ORDER BY MONTH(date(date))) t1 
   LEFT JOIN 
-  (SELECT SUM(total) AS AMOUNTS, MONTHNAME(date(date)) AS MONTHS FROM sales WHERE YEAR(date(date))=YEAR(CURDATE()) GROUP BY MONTH(date(date)) ORDER BY MONTH(date(date)) ) t2 
+  (SELECT IF(STRCMP(t4.MONTHS,t5.MONTHS)=0,t4.AMOUNTS-t5.AMOUNTS,t4.AMOUNTS) AS AMOUNTS, t4.MONTHS FROM 
+(SELECT SUM(total) AS AMOUNTS, MONTHNAME(date(date)) AS MONTHS FROM sales WHERE YEAR(date(date))=YEAR(CURDATE()) GROUP BY MONTH(date(date)) ORDER BY MONTH(date(date)) ) t4
+LEFT JOIN
+(SELECT SUM(balance) AS AMOUNTS, MONTHNAME(date(transaction_date)) AS MONTHS FROM credits WHERE YEAR(date(transaction_date))=YEAR(CURDATE()) GROUP BY MONTH(date(transaction_date)) ORDER BY MONTH(date(transaction_date)))t5 ON t4.MONTHS=t5.MONTHS ) t2 
   ON t1.MONTHS = t2.MONTHS) AS t3";
 $result1	= mysqli_query($db, $sql1);
 
@@ -45,7 +57,10 @@ $sql2 = "SELECT DISTINCT t3.stotal-t3.sreturn AS AMOUNTS, IF( STRCMP(ADAY,DAY)=0
   FROM 
   (SELECT SUM(total) AS AMOUNTS, concat('Week ',WEEK(FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)),2)) AS WEEKS FROM sales_return WHERE YEAR(date(date))=2022 GROUP BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)) ORDER BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7))) t1 
   RIGHT JOIN 
-  (SELECT SUM(total) AS AMOUNTS, concat('Week ',WEEK(FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)),2)) AS WEEKS FROM sales WHERE YEAR(date(date))=2022 GROUP BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)) ORDER BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)) ) t2 
+  (SELECT IF(STRCMP(t4.WEEKS,t5.WEEKS)=0,t4.AMOUNTS-t5.AMOUNTS,t4.AMOUNTS) AS AMOUNTS, t4.WEEKS FROM 
+(SELECT SUM(total) AS AMOUNTS, concat('Week ',WEEK(FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)),2)) AS WEEKS FROM sales WHERE YEAR(date(date))=2022 GROUP BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)) ORDER BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)) ) t4
+LEFT JOIN
+(SELECT SUM(balance) AS AMOUNTS, concat('Week ',WEEK(FROM_DAYS(TO_DAYS( transaction_date) -MOD(TO_DAYS( transaction_date) -1, 7)),2)) AS WEEKS FROM credits WHERE YEAR(date( 	transaction_date))=YEAR(NOW()) GROUP BY FROM_DAYS(TO_DAYS( transaction_date) -MOD(TO_DAYS( transaction_date) -1, 7)) ORDER BY FROM_DAYS(TO_DAYS( transaction_date) -MOD(TO_DAYS( transaction_date) -1, 7)))t5 ON t4.WEEKS=t5.WEEKS) t2 
   ON t1.WEEKS = t2.WEEKS
   UNION ALL
   
@@ -53,25 +68,38 @@ $sql2 = "SELECT DISTINCT t3.stotal-t3.sreturn AS AMOUNTS, IF( STRCMP(ADAY,DAY)=0
   FROM 
   (SELECT SUM(total) AS AMOUNTS, concat('Week ',WEEK(FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)),2)) AS WEEKS FROM sales_return WHERE YEAR(date(date))=2022 GROUP BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)) ORDER BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7))) t1 
   LEFT JOIN 
-  (SELECT SUM(total) AS AMOUNTS, concat('Week ',WEEK(FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)),2)) AS WEEKS FROM sales WHERE YEAR(date(date))=2022 GROUP BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)) ORDER BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)) ) t2 
+  (SELECT IF(STRCMP(t4.WEEKS,t5.WEEKS)=0,t4.AMOUNTS-t5.AMOUNTS,t4.AMOUNTS) AS AMOUNTS, t4.WEEKS FROM 
+(SELECT SUM(total) AS AMOUNTS, concat('Week ',WEEK(FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)),2)) AS WEEKS FROM sales WHERE YEAR(date(date))=2022 GROUP BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)) ORDER BY FROM_DAYS(TO_DAYS(date) -MOD(TO_DAYS(date) -1, 7)) ) t4
+LEFT JOIN
+(SELECT SUM(balance) AS AMOUNTS, concat('Week ',WEEK(FROM_DAYS(TO_DAYS( transaction_date) -MOD(TO_DAYS( transaction_date) -1, 7)),2)) AS WEEKS FROM credits WHERE YEAR(date( 	transaction_date))=YEAR(NOW()) GROUP BY FROM_DAYS(TO_DAYS( transaction_date) -MOD(TO_DAYS( transaction_date) -1, 7)) ORDER BY FROM_DAYS(TO_DAYS( transaction_date) -MOD(TO_DAYS( transaction_date) -1, 7)))t5 ON t4.WEEKS=t5.WEEKS) t2 
   ON t1.WEEKS = t2.WEEKS) AS t3";
 $result2	= mysqli_query($db, $sql2);
 
 // $sql3 = "SELECT SUM(total) AS AMOUNTS, concat(DATE(date),' ',DAYNAME(date)) as DAYS FROM sales WHERE DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= sales.date GROUP BY DATE(date)";
 $sql3 = "SELECT DISTINCT t3.stotal-t3.sreturn AS AMOUNTS, IF( STRCMP(ADAY,DAY)=0, ADAY, CONCAT(ADAY,DAY)) AS DAYS FROM (
-SELECT  COALESCE(t1.AMOUNTS,0) AS sreturn, COALESCE(t1.DAYS,'') AS ADAY, COALESCE(t2.AMOUNTS,0) AS stotal, COALESCE( t2.DAYS,'') AS DAY
-FROM 
-(SELECT SUM(total) AS AMOUNTS, concat(DATE(date),' ',DAYNAME(date)) as DAYS FROM sales_return WHERE DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= sales_return.date GROUP BY DATE(date)) t1 
-RIGHT JOIN 
-(SELECT SUM(total) AS AMOUNTS, concat(DATE(date),' ',DAYNAME(date)) as DAYS FROM sales WHERE DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= sales.date GROUP BY DATE(date) ) t2 
-ON t1.DAYS = t2.DAYS
-UNION ALL
-SELECT COALESCE(t1.AMOUNTS,0) AS sreturn, COALESCE(t1.DAYS,'') AS ADAY, COALESCE(t2.AMOUNTS,0) AS stotal, COALESCE( t2.DAYS,'') AS DAY
-FROM 
-(SELECT SUM(total) AS AMOUNTS, concat(DATE(date),' ',DAYNAME(date)) as DAYS FROM sales_return WHERE DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= sales_return.date GROUP BY DATE(date)) t1 
-LEFT JOIN 
-(SELECT SUM(total) AS AMOUNTS, concat(DATE(date),' ',DAYNAME(date)) as DAYS FROM sales WHERE DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= sales.date GROUP BY DATE(date) ) t2 
-ON t1.DAYS = t2.DAYS) AS t3";
+  SELECT  COALESCE(t1.AMOUNTS,0) AS sreturn, COALESCE(t1.DAYS,'') AS ADAY, COALESCE(t2.AMOUNTS,0) AS stotal, COALESCE( t2.DAYS,'') AS DAY
+  FROM 
+  (SELECT SUM(total) AS AMOUNTS, concat(DATE(date),' ',DAYNAME(date)) as DAYS FROM sales_return WHERE DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= sales_return.date GROUP BY DATE(date)) t1 
+  RIGHT JOIN 
+  (
+  SELECT  IF(STRCMP(t4.DAYS,t5.DAYS)=0, t4.AMOUNTS-t5.AMOUNTS, t4.AMOUNTS) AS AMOUNTS, t4.DAYS FROM
+  ((SELECT SUM(total) AS AMOUNTS, concat(DATE(date),' ',DAYNAME(date)) as DAYS FROM sales WHERE DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= sales.date GROUP BY DATE(date)) t4
+  LEFT JOIN
+  (SELECT SUM(balance) AS AMOUNTS, concat(DATE(transaction_date),' ',DAYNAME(transaction_date)) as DAYS FROM credits WHERE DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= credits.transaction_date GROUP BY DATE(transaction_date)) t5 ON t4.DAYS =t5.DAYS)
+  ) t2 
+  ON t1.DAYS = t2.DAYS
+  UNION ALL
+  SELECT COALESCE(t1.AMOUNTS,0) AS sreturn, COALESCE(t1.DAYS,'') AS ADAY, COALESCE(t2.AMOUNTS,0) AS stotal, COALESCE( t2.DAYS,'') AS DAY
+  FROM 
+  (SELECT SUM(total) AS AMOUNTS, concat(DATE(date),' ',DAYNAME(date)) as DAYS FROM sales_return WHERE DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= sales_return.date GROUP BY DATE(date)) t1 
+  LEFT JOIN 
+  (
+  SELECT  IF(STRCMP(t4.DAYS,t5.DAYS)=0, t4.AMOUNTS-t5.AMOUNTS, t4.AMOUNTS) AS AMOUNTS, t4.DAYS FROM
+  ((SELECT SUM(total) AS AMOUNTS, concat(DATE(date),' ',DAYNAME(date)) as DAYS FROM sales WHERE DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= sales.date GROUP BY DATE(date)) t4
+  LEFT JOIN
+  (SELECT SUM(balance) AS AMOUNTS, concat(DATE(transaction_date),' ',DAYNAME(transaction_date)) as DAYS FROM credits WHERE DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= credits.transaction_date GROUP BY DATE(transaction_date)) t5 ON t4.DAYS =t5.DAYS)
+  ) t2 
+  ON t1.DAYS = t2.DAYS) AS t3";
 $result3	= mysqli_query($db, $sql3);
 
 foreach($result as $data)
@@ -122,16 +150,17 @@ foreach($result3 as $data)
                 <button autofocus class="btn btn-outline-secondary" id="week" type="button">Weeks</button>
                 <button class="btn btn-outline-secondary" id="month" type="button">Months</button>
                 <button class="btn btn-outline-secondary" id="year" type="button">Years</button>
-               
             </div>
-            
             </div>
         </h2>
-         <!-- Default switch -->
-         <div class="ms-5 ps-5 shadow-sm w-25 border form-check form-switch">
-              <input class="form-check-input opacity-10  border border-primary" onclick="window.location.href='../sales/charts1.php'"  type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-              <label class="form-check-label" for="flexSwitchCheckDefault"><strong>Account for Creditors</strong></label>
+        <!-- Checked switch -->
+        <div class="ms-5 ps-5 shadow-sm w-25 border form-check form-switch">
+              <input class="form-check-input opacity-10  border border-primary" onclick="window.location.href='../sales/charts2.php'"  type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+              <label class="form-check-label" for="flexSwitchCheckChecked"><strong>Account for Creditors</strong></label>
             </div>
+
+            <canvas id="salesChart"></canvas>
+        </div>
             <canvas id="salesChart"></canvas>
         </div>
 

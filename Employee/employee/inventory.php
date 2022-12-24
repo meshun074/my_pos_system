@@ -1,7 +1,7 @@
 <?php 
 	include("../server/connection.php");
 	include '../set.php';
-	$sql = "SELECT * FROM products";
+	$sql = "SELECT * FROM products WHERE deleted='FALSE'";
 	$result	= mysqli_query($db, $sql);
 	$deleted = isset($_GET['deleted']);
 	$added  = isset($_GET['added']);

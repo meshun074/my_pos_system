@@ -4,13 +4,13 @@
 	$logout = isset($_GET['logout']);
 	$failure = isset($_GET['failure']);
 
-	$sql  = "SELECT `product_id`,`product_name`,`product_size`,`unit_per_price` FROM `products`";
+	$sql  = "SELECT `product_id`,`product_name`,`product_size`,`unit_per_price` FROM `products` WHERE deleted='FALSE'";
 	$result = mysqli_query($db, $sql);
 	if(!$result->num_rows >0){
 		echo '<script>swal("No Products","No available products for delivery","error");</script>';
 	}
 	
-	$sql1  = "SELECT *FROM `customer`";
+	$sql1  = "SELECT *FROM `customer` WHERE deleted='FALSE'";
 	$result1 = mysqli_query($db, $sql1);
 	if(!$result1->num_rows >0){
 		echo '<script>swal("No Suppliers","No available suppliers to make delivery","error");</script>';

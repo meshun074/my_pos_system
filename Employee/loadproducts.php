@@ -4,7 +4,7 @@
 	if (isset($_POST['products'])){
 
 		$name = mysqli_real_escape_string($db,$_POST['products']);
-		$show 	= "SELECT * FROM products WHERE product_name LIKE '$name%' AND quantity > 0 OR product_id LIKE '$name%' AND quantity > 0";
+		$show 	= "SELECT * FROM products WHERE product_name LIKE '$name%' AND quantity > 0 AND deleted = 'FALSE' OR product_id LIKE '$name%' AND quantity > 0 AND deleted = 'FALSE'";
 		$query 	= mysqli_query($db,$show);
 		if(mysqli_num_rows($query)>0){
 			while($row = mysqli_fetch_array($query)){

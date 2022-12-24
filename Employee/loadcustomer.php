@@ -3,7 +3,7 @@
 
 	
 	$query 	= mysqli_real_escape_string($db, $_POST['query']);	
-	$show 	= "SELECT * FROM customer WHERE firstname LIKE '%{$query}%'";
+	$show 	= "SELECT * FROM customer WHERE firstname LIKE '%{$query}%' AND deleted='FALSE'";
 	$result	= mysqli_query($db,$show);
 	$array  = array();
 

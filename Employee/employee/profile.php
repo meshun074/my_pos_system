@@ -7,6 +7,9 @@ if (isset($_SESSION['username'])) {
 	$username = $_SESSION['username'];
 	$sql = "SELECT * FROM users WHERE username = '$username' AND deleted='FALSE'";
 	$result = mysqli_query($db, $sql);
+	if(mysqli_num_rows($result)==0){
+		header('location: ../index.php');
+	}
 	$row = mysqli_fetch_array($result);
 ?>
 	<!DOCTYPE html>

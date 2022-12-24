@@ -10,7 +10,7 @@
 		echo '<script>swal("No Products","No available products for delivery","error");</script>';
 	}
 	
-	$sql1  = "SELECT *FROM `customer` WHERE deleted='FALSE'";
+	$sql1  = "SELECT *FROM `customer`";
 	$result1 = mysqli_query($db, $sql1);
 	if(!$result1->num_rows >0){
 		echo '<script>swal("No Suppliers","No available suppliers to make delivery","error");</script>';
