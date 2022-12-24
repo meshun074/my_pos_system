@@ -19,14 +19,18 @@
 		?>
 		<div>
 			<div>
-				<h1 class="ml-4 pt-2 pb-4" align="left"><i class="fas fa-shopping-cart"></i> Sales Records</h1>
+				<h1 class="ms-5 pt-2 " align="left"><i class="fas fa-receipt"></i> Sales Details</h1>
+				<hr>
 			</div>
-			<div class="table-responsive pl-5 pr-5">
-			<table class="table table-striped table-bordered" id="sales_table" style="margin-top: -22px;">
+
+			<div class="card text-center ps-4 pe-4">
+			<div class="card-header admin_background">
+				<h2>Reciept No.&nbsp <span class="text-white"> <?php echo $row['receipt_no'];?></span></h2>
+			</div>
+			<div class="card-body">
+			<div class="table-responsive">
+			<table class="table table-sm table-striped table-bordered" id="sales_table" style="margin-top: -22px;">
 				<thead>
-					<tr>
-						<td colspan="5"><h2>Reciept No.&nbsp<?php echo $row['receipt_no'];?></h2></td>
-					</tr>
 					<tr>
 						<th scope="col" class="column-text">Barcode</th>
 						<th scope="col" class="column-text">Product Name</th>
@@ -37,7 +41,6 @@
 						<th scope="col" class="column-text">Customer Name</th>
 						<th scope="col" class="column-text">Sales Office</th>
 						<th scope="col" class="column-text">Status</th>
-						<th scope="col" class="column-text">Date</th>
 					</tr>
 				</thead>
 				<tbody class="table-hover">
@@ -54,11 +57,15 @@
 						<td><?php echo $row["firstname"].'&nbsp'.$row['lastname'];?></td>
 						<td><?php echo $row1['sales_office'];?></td>
 						<td><?php echo $row1['status'];?></td>
-						<td><?php echo $row1['date'];?></td>
 					</tr>
 					<?php } ?>
 					</tbody>
 				</table>
+			</div>
+			</div>
+			<div class="admin_background card-footer ">
+				Date: <span class="text-white"><?php echo $row['date']?></span>
+			</div>
 			</div>
 		</div>
 	</div>

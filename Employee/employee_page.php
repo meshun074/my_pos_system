@@ -48,7 +48,7 @@ if (isset($_SESSION['username'])) {
 								<div class="col-12 col-md-6 pe-1">
 									<table class="table-responsive-sm mt-md-3">
 										<tbody>
-											<tr >
+											<tr>
 												<td valign="baseline"><small>User :<small></td>
 												<td valign="baseline"><small>
 														<p class="ps-2 "><i class="fas fa-user-shield"></i> <?php echo $row['position'];
@@ -56,7 +56,7 @@ if (isset($_SESSION['username'])) {
 																									}
 																								} ?></p><small></td>
 											</tr>
-											<tr >
+											<tr>
 												<td valign="baseline"><small class="pt-1">Date:<small></td>
 												<td valign="baseline"><small>
 														<p class="ps-2 mb-0 "><i class="fas fa-calendar-alt"></i> <span id='time'></span></p><small></td>
@@ -65,12 +65,12 @@ if (isset($_SESSION['username'])) {
 									</table>
 								</div>
 
-				
+
 								<div class="col-12 ">
 									<div class="mt-1 mb-1">
 										<div class="input-group">
 											<div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span></div>
-											<input class="form-control"  type="text" placeholder="Product Search" aria-label="Search" id="search" name="search" onkeyup="loadproducts();" />
+											<input class="form-control" type="text" placeholder="Product Search" aria-label="Search" id="search" name="search" onkeyup="loadproducts();" />
 										</div>
 									</div>
 								</div>
@@ -78,14 +78,12 @@ if (isset($_SESSION['username'])) {
 									<div class="mt-0" id="product_area" class="table-responsive-sm mt-2">
 										<table class="w-100 table-striped font-weight-bold" style="color: #1b1464; cursor: pointer;" id="table1">
 											<thead>
-												<tr claclass='text-center'><b>
-														<td>Barcode</td>
-														<td>Product Name</td>
-														<td>Price</td>
-														<td>Product Size</td>
-														<td>Stocks</td>
-												</tr></b>
-											<tbody id="products">
+											<tbody>
+												<tr>
+													<td id="products" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 m-1">
+
+													</td>
+												</tr>
 
 											</tbody>
 											</thead>
@@ -147,7 +145,7 @@ if (isset($_SESSION['username'])) {
 													<div class="content p-0 ms-2 me-2"><input type="text" class=" form-control-sm customer_search" autocomplete="off" data-provide="typeahead" id="customer_search" placeholder="Customer Search" name="customer" /></div>
 												</small></td>
 
-											<td valign="baseline"><button id="new_customer" class="btn-sm btn-primary border"  data-bs-toggle="modal" data-bs-target=".bd-example-modal-md" style="padding-top: 1px; padding-bottom: 2px;"><span class="badge badge-info"><i class="fas fa-user-plus"></i> New</span></button></td>
+											<td valign="baseline"><button id="new_customer" class="btn-sm btn-primary border" data-bs-toggle="modal" data-bs-target=".bd-example-modal-md" style="padding-top: 1px; padding-bottom: 2px;"><span class="badge badge-info"><i class="fas fa-user-plus"></i> New</span></button></td>
 										</tr>
 									</tbody>
 								</table>
@@ -157,7 +155,7 @@ if (isset($_SESSION['username'])) {
 									<form method="POST" action="">
 										<table class="table-striped w-100 font-weight-bold" style="cursor: pointer; color: #1b1464; " id="table2">
 											<thead>
-												<tr class='text-center'  >
+												<tr class='text-center'>
 													<th>Barcode</th>
 													<th>Description</th>
 													<th>Price</th>
@@ -212,25 +210,25 @@ if (isset($_SESSION['username'])) {
 								</div>
 							</div>
 							<div class="col p-0 mt-1  ">
-										<table class="table-sm table-borderless w-100">
-											<tbody>
-												<tr>
+								<table class="table-sm table-borderless w-100">
+									<tbody>
+										<tr>
 
-													<td class="w-50">
-													<button id="buttons" style="background-color: #1b1464; " type="button" name='enter' class="Enter btn btn-secondary border w-100"><i class="fas fa-handshake"></i> Finish</button>
-													</td>
-													<td class="w-50">
-													<button id="buttons" type="button"  class="cancel btn btn-danger border w-100 "><i class="fas fa-ban"></i> Cancel</button>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
+											<td class="w-50">
+												<button id="buttons" style="background-color: #1b1464; " type="button" name='enter' class="Enter btn btn-secondary border w-100"><i class="fas fa-handshake"></i> Finish</button>
+											</td>
+											<td class="w-50">
+												<button id="buttons" type="button" class="cancel btn btn-danger border w-100 "><i class="fas fa-ban"></i> Cancel</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
-				
+				</div>
+
 				<?php include('add.php'); ?>
 				<?php include('../templates/js_popper.php'); ?>
 				<script type="text/javascript" src="script.js"></script>

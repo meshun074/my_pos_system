@@ -16,6 +16,7 @@
 			OR username LIKE "%' .$_POST["search"]["value"].'%"
 			OR firstname LIKE "%' .$_POST["search"]["value"].'%"
 			OR lastname LIKE "%' .$_POST["search"]["value"]. '%"
+			OR date LIKE "%' .$_POST["search"]["value"]. '%"
 		';
 	}else{
 		$query .= '';

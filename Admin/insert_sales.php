@@ -4,6 +4,7 @@ if(isset($_POST['product'])){
 	$discount = $_POST['discount'];
 	$total = $_POST['totalvalue'];
 	$price = $_POST['price'];
+	$cprice = $_POST['cprice'];
 	$product = $_POST['product'];
 	$quantity = $_POST['quantity'];
     $status = $_POST['status'];
@@ -65,13 +66,14 @@ if(isset($_POST['product'])){
 
 			for($count = 0; $count < count($product); $count++){
 				$price_clean = mysqli_real_escape_string($db, $price[$count]);
+				$cprice_clean = mysqli_real_escape_string($db, $cprice[$count]);
 				$reciept_clean = mysqli_real_escape_string($db, $reciept[$count]);
 				$product_clean = mysqli_real_escape_string($db, $product[$count]);
 				$quantity_clean = mysqli_real_escape_string($db, $quantity[$count]);
-				if($product_clean != '' && $quantity_clean != '' && $price_clean != '' && $reciept_clean != ''){
+				if($product_clean != '' && $quantity_clean != '' && $price_clean != '' && $cprice_clean != '' && $reciept_clean != ''){
 					$query .= "
-						INSERT INTO sales_product(receipt_no,product_id,customer_id,username,sales_office,price,status,product_quantity) 
-						VALUES('$reciept_clean','$product_clean','$cust_id_new','$user','$depo','$price_clean','$status','$quantity_clean');
+						INSERT INTO sales_product(receipt_no,product_id,customer_id,username,sales_office,c_price,price,status,product_quantity) 
+						VALUES('$reciept_clean','$product_clean','$cust_id_new','$user','$depo','$cprice_clean','$price_clean','$status','$quantity_clean');
 						";
 				}
 			} 

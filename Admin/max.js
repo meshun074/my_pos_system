@@ -72,6 +72,7 @@ $('body').on('click','.js-add',function(){
     var product_id = target.attr('data-id');
     var product = target.attr('data-product');
     var price = target.attr('data-price');
+    var cprice = target.attr('data-cprice');
     var barcode = target.attr('data-barcode');
     var size = target.attr('data-unt');
     swal({
@@ -89,7 +90,7 @@ $('body').on('click','.js-add',function(){
                     swal("Error","Please enter a number!","error");
                 }else{
                     var total = parseInt(value,10) * parseFloat(price);
-                    $('#tableData').append("<tr class='prd'><td> "+barcode+" <input type='text' hidden class='barcode text-center' value='"+product_id+"'></td><td class='text-center'>"+product+"</td><td class='price text-center'>"+accounting.formatMoney(price,{symbol:"₵",format: "%s %v"})+"</td><td class='text-center'>"+size+"</td><td class='qty text-center'>"+value+"</td><td class='totalPrice text-center'>"+accounting.formatMoney(total,{symbol:"₵",format: "%s %v"})+"</td><td class='text-center p-1'><button class='btn btn-danger btn-sm' type='button' id='delete-row'><i class='fas fa-times-circle'></i></button><tr>");
+                    $('#tableData').append("<tr class='prd'><td> "+barcode+" <input type='text' hidden class='barcode text-center' value='"+product_id+"'></td><td class='text-center'>"+product+"</td><td class='price text-center'>"+accounting.formatMoney(price,{symbol:"₵",format: "%s %v"})+"</td><td hidden class='cprice text-center'>"+accounting.formatMoney(cprice,{symbol:"₵",format: "%s %v"})+"</td><td class='text-center'>"+size+"</td><td class='qty text-center'>"+value+"</td><td class='totalPrice text-center'>"+accounting.formatMoney(total,{symbol:"₵",format: "%s %v"})+"</td><td class='text-center p-1'><button class='btn btn-danger btn-sm' type='button' id='delete-row'><i class='fas fa-times-circle'></i></button><tr>");
                     GrandTotal();
                 }
             }
@@ -240,6 +241,7 @@ function calf(){
         var product = [];
         var quantity = [];
         var price = [];
+        var cprice = [];
         var user = $('#uname').val();
         var customer = $('#customer_search').val();
         var discount = $('#discount').val();
@@ -253,6 +255,9 @@ function calf(){
         });
         $('.price').each(function(){
             price.push($(this).text().replace(/,/g, "").replace("₵",""));
+        });
+        $('.cprice').each(function(){
+            cprice.push($(this).text().replace(/,/g, "").replace("₵",""));
         });
 
         swal({
@@ -292,7 +297,7 @@ function calf(){
                                 $.ajax({
                                     url:"insert_sales.php",
                                     method:"POST",
-                                    data:{totalvalue:TotalValue, product:product, price:price, user:user, quantity:quantity, discount:discount, depo:depo, owes:owes, status:status, paid:TotalValue},
+                                    data:{totalvalue:TotalValue, product:product, price:price, cprice:cprice, user:user, quantity:quantity, discount:discount, depo:depo, owes:owes, status:status, paid:TotalValue},
                                     success: function(data){                                        
 
                                         if( data == "success"){
@@ -320,7 +325,7 @@ function calf(){
                                 $.ajax({
                                     url:"insert_sales.php",
                                     method:"POST",
-                                    data:{totalvalue:TotalValue, product:product, price:price, user:user, customer:customer, quantity:quantity, discount:discount, depo:depo, owes:owes.toFixed(2), status:status, paid:TotalValue},
+                                    data:{totalvalue:TotalValue, product:product, price:price, cprice:cprice, user:user, customer:customer, quantity:quantity, discount:discount, depo:depo, owes:owes.toFixed(2), status:status, paid:TotalValue},
                                     success: function(data){
 
                                         if( data == "success"){
@@ -364,6 +369,7 @@ function calt() {
         var product = [];
         var quantity = [];
         var price = [];
+        var cprice = [];
         var user = $('#uname').val();
         var customer = $('#customer_search').val();
         var discount = $('#discount').val();
@@ -376,6 +382,9 @@ function calt() {
         });
         $('.price').each(function(){
             price.push($(this).text().replace(/,/g, "").replace("₵",""));
+        });
+        $('.cprice').each(function(){
+            cprice.push($(this).text().replace(/,/g, "").replace("₵",""));
         });
 
         swal({
@@ -409,7 +418,7 @@ function calt() {
                             $.ajax({
                                 url:"insert_sales.php",
                                 method:"POST",
-                                data:{totalvalue:TotalValue, product:product, price:price, user:user, customer:customer, quantity:quantity, discount:discount, depo:depo, owes:owes, status:status, paid:value},
+                                data:{totalvalue:TotalValue, product:product, price:price, cprice:cprice, user:user, customer:customer, quantity:quantity, discount:discount, depo:depo, owes:owes, status:status, paid:value},
                                 success: function(data){
 
                                     if( data == "success"){

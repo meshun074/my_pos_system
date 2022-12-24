@@ -53,7 +53,7 @@ $failure = "";
                         <td><?php echo $row['owes'];?></td>
                         <td><?php echo $row['paid'];?></td>
                         <td><?php echo $row['balance'];?></td>
-                        <td><?php echo $row['transaction_date'];?></td>
+                        <td><?php echo date('d M Y, g:i A', strtotime($row['transaction_date']));?></td>
                         <td>
                             <a name="edit" title="Make Payment" style='font-size:10px; border-radius:5px;padding:4px;' href="update_creditor.php?id=<?php echo $row['receipt_no'];?>" class="btn btn-info btn-xs"><i class="fas fa-user-edit"></i></a>
 <!--                            <button type="button" name="view" style='font-size:10px; border-radius:5px;padding:4px;' id="--><?php //echo $row['reciept_no'];?><!--" class="btn btn-success btn-xs view_data"><i class="fas fa-eye"></i></button>-->

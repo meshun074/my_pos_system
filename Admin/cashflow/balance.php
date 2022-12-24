@@ -2,16 +2,29 @@
 	include("../cashflow/add.php");
 	include("../server/connection.php");
 	include '../set.php';
-	$sql = "SELECT SUM(quantity*cost_price)  as cTotal, SUM(quantity*sell_price)  as sTotal  FROM products";
+	$date='';
+	$curyear = date("Y");
+	if(isset($_GET['date']))
+	{
+		$date = $_GET['date'];
+	}
+	else{
+		$date = date("Y");
+	}
+	$sql = "SELECT SUM(product_quantity*c_price)  as cTotal, SUM(product_quantity*price)  as sTotal  FROM sales_product WHERE YEAR(date)= $date";
 	$result	= mysqli_query($db, $sql);
     $row = mysqli_fetch_assoc($result);
-	$sql1 = "SELECT SUM(Total)  as sTotal  FROM credit_note";
+	$sql1 = "SELECT SUM(Total)  as sTotal  FROM credit_note WHERE YEAR(date)= $date";
 	$result1	= mysqli_query($db, $sql1);
     $row1 = mysqli_fetch_assoc($result1);
 
-    $sql2 = "SELECT SUM(amount) as Total FROM draw_invest_flow Where purpose LIKE '%expense%' AND transaction_type = 'Cash_out'";
+    $sql2 = "SELECT SUM(amount) as Total FROM draw_invest_flow Where purpose LIKE '%expense%' AND transaction_type = 'Cash_out' AND YEAR(transaction_date)= $date";
 	$result2	= mysqli_query($db, $sql2);
-    $row2 = mysqli_fetch_assoc($result2)
+    $row2 = mysqli_fetch_assoc($result2);
+
+	$sql3 = "SELECT SUM(balance) AS creditors  FROM credits Where YEAR(transaction_date)= $date";
+	$result3	= mysqli_query($db, $sql3);
+    $row3 = mysqli_fetch_assoc($result3);
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,10 +40,14 @@
 
 		?>
 		<div >
-			<h1 class="ms-5 pt-2"><i class="fa-solid fa-receipt"></i> Income Statement</h1>
+			<h1 class="ms-5 pt-2"><i class="fa-solid fa-receipt"></i> Income Statement for the year <span>
+				<select class="fs-3" name="date" id="date">
+					<?php for ( $i=0; $i <=10; $i++){?>
+						<option <?php if(intval($curyear)-$i == $date){echo 'selected ';}?> onclick="window.location.href='../cashflow/balance.php?date=<?=intval($curyear)-$i?>'" value="<?=intval($curyear)-$i?>"> <?=intval($curyear)-$i?> </option>
+					 <?php }?>
+				</select></span> </h1>
 			<hr class="mb-0 pb-0">
 			<div class="table-responsive mt-0 ps-4 pe-4" id="cash">
-				<h2 class="text-center mb-0">Income statement for the year <?php echo date("Y"); ?></h2>
 			<table class="mt-0 table table-sm table-striped" id="balance_table" >
 				<thead>
 					<tr>
@@ -45,28 +62,32 @@
 					</tr>
 					<tr class="table-active">
 						<td>Product Sales</td>
-						<td class="text-right"><?php echo $row['sTotal']?> </td>						
+						<td class="text-end"><?php echo number_format($row['sTotal'] , 2, '.','');?> </td>						
 					</tr>					
 					
                     <tr class="table-active">
 						<td>Cost of Sales</td>
-						<td class="text-right"><?php echo -$row['cTotal']?></td>						
+						<td class="text-end"><?php echo number_format(-$row['cTotal'], 2, '.','');?></td>						
 					</tr>
 					<tr class="table-active">
 						<td>Sales Return</td>
-						<td class="text-right"><?php echo -$row1['sTotal']?> </td>						
+						<td class="text-end"><?php echo number_format(-$row1['sTotal'], 2, '.','')?> </td>						
 					</tr>
                     <tr class="table-active">
 						<td>Gross Profit</td>
-						<td class="text-right"> <?php echo $row['sTotal']-$row['cTotal']-$row1['sTotal'];?> </td>						
+						<td class="text-end"> <?php echo number_format($row['sTotal']-$row['cTotal']-$row1['sTotal'], 2, '.','');?> </td>						
 					</tr>
                     <tr class="table-active">
 						<th>Expenses</th>
-						<td class="text-right"></td>						
+						<td class="text-end"></td>						
 					</tr>
                     <tr class="table-active">
 						<td>Business Expenses(Maintenance, Wages, Rent, etc.) </td>
-						<td class="text-right"><?php echo -$row2['Total']?></td>						
+						<td class="text-end"><?php echo number_format(-$row2['Total'], 2, '.','');?></td>						
+					</tr>
+					<tr class="table-active">
+						<th>Creditors</th>
+						<td class="text-end"><?php echo number_format(-$row3['creditors'], 2, '.','');?></td>						
 					</tr>
                     <tr class="table-active">
 						<td colspan="2"><h3 class="text-center">Income</h3> </td>
@@ -74,7 +95,7 @@
 					</tr>
                     <tr class="table-active">
 						<th>Net Income</th>
-						<td class="text-right"><?php echo $row['sTotal']-$row['cTotal'] -$row2['Total']-$row1['sTotal'];?></td>						
+						<td class="text-end"><?php echo number_format($row['sTotal']-$row['cTotal'] -$row2['Total']-$row1['sTotal']-$row3['creditors'], 2, '.','');?></td>						
 					</tr>                   
 
                 </tbody>
@@ -82,7 +103,7 @@
 			</table>
 			</div>
             <div align="right" class="container p-2 pe-5">
-                <button  class="admin_background btn btn-outline-dark" onclick="printSection('cash')">Print Cashflow</button>
+                <button  class="admin_background btn btn-outline-dark" onclick="printSection('cash')">Print Income Statement</button>
             </div>
 		</div>
 	</div>
