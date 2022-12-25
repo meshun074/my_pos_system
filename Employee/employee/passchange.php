@@ -8,7 +8,7 @@ if (isset($_POST['changepass'])){
 	$newpass 	= mysqli_real_escape_string($db, $_POST['newpass']);
 	$confirmpass	= (mysqli_real_escape_string($db, $_POST['confirmpass']));
 	
-	$query 		= "SELECT * FROM users WHERE username = '$username' AND deleted='FALSE";
+	$query 		= "SELECT * FROM users WHERE username = '$username' AND deleted='FALSE'";
 	$result 	= mysqli_query($db, $query);
 	$row 		= mysqli_fetch_array($result);
 

@@ -51,7 +51,7 @@ function getOption(){
         success : function(data){
             for(x in data)
             {
-                // alert(data[x]);
+                
                 option +='<option value="'+ x+'">'+data[x]+'</option>';
                 // break;
             }
@@ -80,34 +80,22 @@ $(document).ready(function(){
 
 		html_code += '<td><select name="product_name" id="product_name'+count+'" class="form-control form-control-sm input-sm product_name" placeholder="Products" aria-label="Default select example">';
 		
-		// alert(getOption(function(d) { var opt = d;
-		// return  JSON.stringify(opt); }));
 		html_code +=getOption();
-		html_code +='</select></div></td>';
-		// html_code += '<td><input type="text" pattern="[A-Za-z]+" title="No number on product name" name="product_name" id="product_name'+count+'" placeholder="Title" class="product_name form-control form-control-sm input-sm"/></td>';
 
+		html_code +='</select></div></td>';
 		
 		html_code += '<td><input type="number" name="quantity" min="1" id="quantity'+count+'" data-srno="'+count+'" placeholder="0"  class="form-control form-control-sm nput-sm quantity" /></td>';
 
 		html_code += '<td><input type="number" name="buy_price" min="0.00" step="0.00" placeholder="Price" id="buy_price'+count+'" data-srno="'+count+'" class="form-control form-control-sm input-sm buy_price"></td>';
 
-		// html_code += '<td><input type="text" name="unit" pattern="[A-Za-z]+" title="No number on unit" id="unit'+count+'" placeholder="Kilograms" data-srno="'+count+'" class="form-control form-control-sm input-sm unit"></td>';
-
-		// html_code += '<td><input type="number" name="tax_rate" min="1" id="tax_rate'+count+'" placeholder="%" data-srno="'+count+'" class="form-control form-control-sm input-sm tax_rate"></td>';
-
-		// html_code += '<td><input type="number" name="min_qty" min="1" id="min_qty'+count+'" data-srno="'+count+'" class="form-control form-control-sm input-sm min_qty" placeholder="Qty" /></td>';
-
+		
 		html_code += '<td><input type="number" name="sell_price" min="0.00" step="0.00" id="sell_price'+count+'" placeholder="Price + Profit" data-srno="'+count+'" class="form-control form-control-sm input-sm sell_price number_only"></td>';	
 
 		html_code += '<td><input type="text" name="total_amount" readonly id="total_amount'+count+'" placeholder="Cost * Quantity" data-srno="'+count+'" class="form-control form-control-sm input-sm total_amount"></td>';
 
-		// html_code += '<td><input type="text" name="remarks" id="remarks'+count+'" placeholder="Remarks" data-srno="'+count+'" class="form-control form-control-sm input-sm remarks"></td>';
-
-		// html_code += '<td><input type="text" name="location" id="location'+count+'" placeholder="Location" data-srno="'+count+'" class="form-control form-control-sm input-sm location"></td>';
-
+		
 		html_code += '<td><button type="button" name="remove_row" id="'+count+'" class="btn btn-sm btn-danger btn-xs remove_row"><i class="fas fa-minus-circle"></i></button></td></tr>';
-		// $("#invoice-item-table").val($('#invoice-item-table').val() + html_code);
-		// $("#invoice-item-table").append(html_code);
+
 		$('#invoice-item-table').append(html_code);
 		
 
@@ -175,7 +163,6 @@ $(document).ready(function(){
 						actual_amount = parseFloat(sell_price) * parseFloat(quantity);
 					}				
 				}
-				alert(total_amount);
 			}
 			final_product_amount += total_amount;
 		}
@@ -255,10 +242,10 @@ $(document).ready(function(){
 				if(data=="success"){
 					window.location.href='../delivery/delivery.php?success="1"';
 				}else{
-					alert(data)
+					
 					window.location.href='../delivery/add_delivery.php?failure';
 				}
-			// alert(data); /* alerts the response from php.*/
+			
 			}
 			}); 
 

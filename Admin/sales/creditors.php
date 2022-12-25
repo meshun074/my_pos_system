@@ -1,7 +1,7 @@
 <?php
 include("../server/connection.php");
 include '../set.php';
-$sql = "SELECT * FROM credits,customer where credits.customer_id=customer.customer_id AND balance!=0";
+$sql = "SELECT * FROM credits,customer where credits.customer_id=customer.customer_id AND balance!=0 ORDER BY credits.receipt_no DESC";
 $result	= mysqli_query($db, $sql);
 $deleted = isset($_GET['deleted']);
 $added  = isset($_GET['added']);

@@ -4,7 +4,7 @@
 	include '../set.php';
 	$user = $_SESSION['username'];
 	// $sql = "SELECT * FROM cashflow WHERE username='$user' ORDER BY transaction_id ASC ";
-	$sql = "SELECT transaction_id, description, amount, transaction_date FROM cashflow_in WHERE username='$user' ORDER BY transaction_date ASC";
+	$sql = "SELECT transaction_id, description, amount, transaction_date FROM cashflow_in WHERE username='$user' ORDER BY id DESC";
 	$result	= mysqli_query($db, $sql);
 ?>
 <!DOCTYPE html>
