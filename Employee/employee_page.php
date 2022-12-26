@@ -29,7 +29,7 @@ if (isset($_SESSION['username'])) {
 				<link rel="icon" type="image/png" sizes="180x180" href="../images/sunstar1.png">
 				<link rel="stylesheet" type="text/css" href="../bootstrap4/css/bootstrap.min.css">
 				<link rel="stylesheet" type="text/css" href="../bootstrap4/css/style2.css">
-				<link rel="stylesheet" href="../fontawesome-free-6.2.1-web/css/all.css" />
+				<link rel="stylesheet" href="../bootstrap4/fontawesome/all.css" />
 				<script src="../bootstrap4/jquery/sweetalert.min.js"></script>
 			</head>
 
