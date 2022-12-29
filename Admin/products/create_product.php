@@ -3,7 +3,7 @@ include('../server/connection.php');
 include('../products/add.php');
 include '../set.php';
 
-$sql  = "SELECT * FROM `supplier`";
+$sql  = "SELECT * FROM `supplier` WHERE deleted='FALSE'";
 $result = mysqli_query($db, $sql);
 if (!$result->num_rows > 0) {
     echo '<script>swal("No Supplier","Products needs suppliers","error");</script>';
